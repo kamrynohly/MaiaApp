@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,7 +100,7 @@
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
                                     <action selector="signUpButton:" destination="l2G-rN-Ppj" eventType="touchUpInside" id="ZPw-ln-MSS"/>
-                                    <segue destination="iad-Wq-mdd" kind="show" identifier="successSignUp" id="kah-Kx-zvw"/>
+                                    <segue destination="iad-Wq-mdd" kind="show" identifier="successSignIn" id="kah-Kx-zvw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,12 +243,20 @@
                                 <rect key="frame" x="179" y="660" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="e8J-To-Ocd" eventType="touchUpInside" id="2Sc-oc-YT1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iqN-NY-UbL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="GKL-yv-79W"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="KAA-NQ-AyJ" id="m3f-ei-9Ks"/>
+                        <outlet property="passwordTextField" destination="NoI-dY-WIu" id="Lm3-Xq-Ycn"/>
+                        <segue destination="iad-Wq-mdd" kind="show" identifier="successfulLogIn" id="ahO-jl-0af"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmQ-EN-LuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,6 +403,9 @@
             <point key="canvasLocation" x="4251" y="1416"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ahO-jl-0af"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
