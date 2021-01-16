@@ -16,6 +16,9 @@
 		9AF5B2FC25AFBA460018515B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5B2FA25AFBA460018515B /* LaunchScreen.storyboard */; };
 		C9E93092EE4C125FBAF69267 /* Pods_MaiaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7048FB1F99D4EAF69BD9130 /* Pods_MaiaApp.framework */; };
 		D90F147F25B26BDE00D2096C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */; };
+		D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B325B26F5B00D2096C /* LogInViewController.swift */; };
+		D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B625B26F6900D2096C /* SignUpViewController.swift */; };
+		D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B925B26F9800D2096C /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		9AF5B2FD25AFBA460018515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA5B3D8935976F0036BAFB54 /* Pods-MaiaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaiaApp.release.xcconfig"; path = "Target Support Files/Pods-MaiaApp/Pods-MaiaApp.release.xcconfig"; sourceTree = "<group>"; };
 		D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D90F14B325B26F5B00D2096C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D90F14B625B26F6900D2096C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D90F14B925B26F9800D2096C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E7048FB1F99D4EAF69BD9130 /* Pods_MaiaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaiaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +77,9 @@
 				9AF5B2EE25AFBA440018515B /* SceneDelegate.swift */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
 				9AF5B2F225AFBA440018515B /* Main.storyboard */,
+				D90F14B325B26F5B00D2096C /* LogInViewController.swift */,
+				D90F14B625B26F6900D2096C /* SignUpViewController.swift */,
+				D90F14B925B26F9800D2096C /* DashboardViewController.swift */,
 				9AF5B2F825AFBA460018515B /* Assets.xcassets */,
 				9AF5B2FA25AFBA460018515B /* LaunchScreen.storyboard */,
 				9AF5B2FD25AFBA460018515B /* Info.plist */,
@@ -212,9 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
+				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
 				9AF5B2F125AFBA440018515B /* ViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
+				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

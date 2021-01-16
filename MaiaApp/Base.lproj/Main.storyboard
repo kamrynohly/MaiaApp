@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="1048" y="149"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="YGs-rx-cX1">
             <objects>
-                <viewController id="l2G-rN-Ppj" sceneMemberID="viewController">
+                <viewController id="l2G-rN-Ppj" customClass="SignUpViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qSu-hG-Ffd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="iad-Wq-mdd" kind="show" id="kah-Kx-zvw"/>
+                                    <action selector="signUpButton:" destination="l2G-rN-Ppj" eventType="touchUpInside" id="ZPw-ln-MSS"/>
+                                    <segue destination="iad-Wq-mdd" kind="show" identifier="successSignUp" id="kah-Kx-zvw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +108,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="elZ-6M-Uut"/>
+                    <connections>
+                        <outlet property="confirmpw" destination="MME-ha-7vZ" id="oBN-XF-si4"/>
+                        <outlet property="email" destination="gic-St-rF2" id="v9f-Qx-7qK"/>
+                        <outlet property="name" destination="QNb-rK-8m0" id="0Yl-LW-3DJ"/>
+                        <outlet property="password" destination="OTN-iD-Rxe" id="2Af-Ib-184"/>
+                        <outlet property="username" destination="IdX-gE-PoC" id="nVn-Ue-ncz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChA-be-See" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="4250.7246376811599" y="-850.44642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="zMB-sA-ihn">
             <objects>
-                <viewController id="e8J-To-Ocd" sceneMemberID="viewController">
+                <viewController id="e8J-To-Ocd" customClass="LogInViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QWX-0d-ZVK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +254,7 @@
             </objects>
             <point key="canvasLocation" x="1874" y="589"/>
         </scene>
-        <!--Item-->
+        <!--Dashboard-->
         <scene sceneID="CHD-ZD-BIB">
             <objects>
                 <viewController id="204-kv-tbE" sceneMemberID="viewController">
@@ -254,8 +262,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SET UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-By-yiU">
-                                <rect key="frame" x="158" y="114" width="99" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DASHBOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-By-yiU">
+                                <rect key="frame" x="118" y="114" width="179" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -265,7 +273,7 @@
                         <viewLayoutGuide key="safeArea" id="2WL-La-ZM3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="FGJ-bF-FdQ"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="FGJ-bF-FdQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3P-RD-E5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -343,16 +351,48 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-SD-gKn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3hq-YB-Vnj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="204-kv-tbE" kind="relationship" relationship="viewControllers" id="rMr-Xv-CeB"/>
+                        <segue destination="kcQ-ch-IBP" kind="relationship" relationship="viewControllers" id="2cg-s4-8TW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpn-OJ-ozb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3340.579710144928" y="588.61607142857144"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ck2-rH-avl">
+            <objects>
+                <viewController id="kcQ-ch-IBP" customClass="DashboardViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="deA-Zi-49r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DASHBOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAZ-Gc-8sF">
+                                <rect key="frame" x="118" y="114" width="179" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeC-UI-fFk">
+                                <rect key="frame" x="171" y="433" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="peace out!"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dBE-7U-UUU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="hXJ-KM-e4b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10L-bl-Nhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4251" y="1416"/>
         </scene>
     </scenes>
     <resources>
