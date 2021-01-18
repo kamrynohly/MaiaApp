@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Firebase (7.4.0):
     - Firebase/Core (= 7.4.0)
   - Firebase/Analytics (7.4.0):
@@ -82,6 +85,7 @@ PODS:
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
+  - Charts
   - Firebase
   - Firebase/Analytics
   - Firebase/Auth
@@ -89,6 +93,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -105,6 +110,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Firebase: 09fb40287b6dfc8ee65f726fa0b788719d3f2a07
   FirebaseAnalytics: adb3c8f02f83d00661cdaac6dbb4d54e9720d1b6
   FirebaseAuth: d8dba8db90a1705ee2493857047282ca4f6e7598
@@ -120,6 +126,6 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 0b45aebdb20b9cd63711e50cf9b62aade2842c78
+PODFILE CHECKSUM: 7ce4b217e90b05de5b721b9104a6d67ffdc4c0d2
 
 COCOAPODS: 1.10.0

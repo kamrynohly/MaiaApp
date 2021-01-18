@@ -139,6 +139,9 @@
                                 <rect key="frame" x="179" y="691" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="UzO-8E-YZl" kind="show" id="Mpb-4f-lsX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uyF-EL-wpn"/>
@@ -169,11 +172,15 @@
                                 <rect key="frame" x="179" y="683" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="5Cn-SD-gKn" kind="show" id="10V-TA-693"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4zD-8U-vrm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ysx-HN-6hb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd8-vq-mRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,23 +272,37 @@
         <!--Dashboard-->
         <scene sceneID="CHD-ZD-BIB">
             <objects>
-                <viewController id="204-kv-tbE" sceneMemberID="viewController">
+                <viewController id="204-kv-tbE" customClass="DashboardViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1dt-vw-LVJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DASHBOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-By-yiU">
-                                <rect key="frame" x="118" y="114" width="179" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DASHBOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-By-yiU">
+                                <rect key="frame" x="117.5" y="114" width="179" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1b-yU-9id" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="236" width="414" height="319"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2WL-La-ZM3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2WL-La-ZM3" firstAttribute="bottom" secondItem="v1b-yU-9id" secondAttribute="bottom" constant="258" id="7l4-OP-fpD"/>
+                            <constraint firstItem="v1b-yU-9id" firstAttribute="centerX" secondItem="rcZ-By-yiU" secondAttribute="centerX" id="Bvx-KK-7Iq"/>
+                            <constraint firstItem="v1b-yU-9id" firstAttribute="top" secondItem="1dt-vw-LVJ" secondAttribute="top" constant="236" id="XwD-cE-9wT"/>
+                            <constraint firstItem="v1b-yU-9id" firstAttribute="top" secondItem="rcZ-By-yiU" secondAttribute="bottom" constant="86" id="adg-CL-4KP"/>
+                            <constraint firstItem="v1b-yU-9id" firstAttribute="leading" secondItem="2WL-La-ZM3" secondAttribute="leading" id="hpB-Wf-UjO"/>
+                            <constraint firstItem="v1b-yU-9id" firstAttribute="centerX" secondItem="1dt-vw-LVJ" secondAttribute="centerX" id="qco-Hh-TtQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" id="FGJ-bF-FdQ"/>
+                    <connections>
+                        <outlet property="graphView" destination="v1b-yU-9id" id="CN7-xV-f3w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3P-RD-E5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,6 +379,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-SD-gKn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zwa-El-9LC"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3hq-YB-Vnj">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -375,7 +397,7 @@
         <!--Settings-->
         <scene sceneID="ck2-rH-avl">
             <objects>
-                <viewController id="kcQ-ch-IBP" customClass="DashboardViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kcQ-ch-IBP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deA-Zi-49r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,6 +431,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

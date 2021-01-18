@@ -10,4 +10,5 @@ target 'MaiaApp' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Database'
+    pod 'Charts'
 end
