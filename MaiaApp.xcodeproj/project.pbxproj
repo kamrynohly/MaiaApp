@@ -23,6 +23,7 @@
 		D90F153825B6361D00D2096C /* DiagnosticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153725B6361D00D2096C /* DiagnosticViewController.swift */; };
 		D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153A25B6363C00D2096C /* SetUpViewController.swift */; };
 		D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153D25B6365700D2096C /* AboutViewController.swift */; };
+		D90F154125B7669300D2096C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154025B7669300D2096C /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D90F153725B6361D00D2096C /* DiagnosticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticViewController.swift; sourceTree = "<group>"; };
 		D90F153A25B6363C00D2096C /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		D90F153D25B6365700D2096C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D90F154025B7669300D2096C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				9AF5B2EE25AFBA440018515B /* SceneDelegate.swift */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
 				9AF5B2F225AFBA440018515B /* Main.storyboard */,
+				D90F154025B7669300D2096C /* RoundButton.swift */,
 				D90F153D25B6365700D2096C /* AboutViewController.swift */,
 				D90F153A25B6363C00D2096C /* SetUpViewController.swift */,
 				D90F153725B6361D00D2096C /* DiagnosticViewController.swift */,
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90F154125B7669300D2096C /* RoundButton.swift in Sources */,
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
 				D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */,
