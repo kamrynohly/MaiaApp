@@ -10,6 +10,14 @@ import Charts
 
 class DashboardViewController: UIViewController {
 
+    
+    @IBAction func goToDiagnostic(_ sender: Any) {
+        if let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiagnosticNavigationController") as? UINavigationController
+        {
+            home.modalPresentationStyle = .fullScreen
+            UIApplication.topViewController()?.present(home, animated: true, completion: nil)
+        }
+    }
     @IBOutlet weak var graphView: LineChartView!
     
     //either grab from Core Data or database

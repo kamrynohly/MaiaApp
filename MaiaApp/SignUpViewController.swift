@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
                             let infoDict : [String : Any] = ["username" : self.username.text!]
                             ref.setValue(infoDict)
                             
-                            self.performSegue(withIdentifier: "successSignIn", sender: self)
+                            self.performSegue(withIdentifier: "successSignUp", sender: self)
                             
                         }
                         

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="1048" y="149"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up-->
         <scene sceneID="YGs-rx-cX1">
             <objects>
                 <viewController id="l2G-rN-Ppj" customClass="SignUpViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,13 +63,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofw-bY-lXK">
-                                <rect key="frame" x="150" y="205" width="114" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNb-rK-8m0">
                                 <rect key="frame" x="29" y="334" width="357" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -100,82 +93,75 @@
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
                                     <action selector="signUpButton:" destination="l2G-rN-Ppj" eventType="touchUpInside" id="ZPw-ln-MSS"/>
-                                    <segue destination="iad-Wq-mdd" kind="show" identifier="successSignIn" id="kah-Kx-zvw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jf1-Aa-8tX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="elZ-6M-Uut"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="elZ-6M-Uut"/>
                     <connections>
                         <outlet property="confirmpw" destination="MME-ha-7vZ" id="oBN-XF-si4"/>
                         <outlet property="email" destination="gic-St-rF2" id="v9f-Qx-7qK"/>
                         <outlet property="name" destination="QNb-rK-8m0" id="0Yl-LW-3DJ"/>
                         <outlet property="password" destination="OTN-iD-Rxe" id="2Af-Ib-184"/>
                         <outlet property="username" destination="IdX-gE-PoC" id="nVn-Ue-ncz"/>
+                        <segue destination="iad-Wq-mdd" kind="show" identifier="successSignUp" id="0oH-Bd-bFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChA-be-See" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1874" y="-123"/>
         </scene>
-        <!--View Controller-->
+        <!--About-->
         <scene sceneID="1BR-xV-igF">
             <objects>
-                <viewController id="iad-Wq-mdd" sceneMemberID="viewController">
+                <viewController id="iad-Wq-mdd" customClass="AboutViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxB-Kh-ZB7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-be-9xr">
-                                <rect key="frame" x="157" y="192" width="100" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-IU-uaI">
                                 <rect key="frame" x="179" y="691" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="UzO-8E-YZl" kind="show" id="Mpb-4f-lsX"/>
+                                    <segue destination="UzO-8E-YZl" kind="show" id="SBW-Xd-uDG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uyF-EL-wpn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9HE-x2-o6x"/>
+                    <navigationItem key="navigationItem" title="About" id="9HE-x2-o6x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rem-18-r2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2635" y="-124"/>
+            <point key="canvasLocation" x="3341" y="-123"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Up View Controller-->
         <scene sceneID="ck0-y1-WhD">
             <objects>
-                <viewController id="UzO-8E-YZl" sceneMemberID="viewController">
+                <viewController id="UzO-8E-YZl" customClass="SetUpViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Gb-nr-vaF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SET UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-4p-rrM">
-                                <rect key="frame" x="158" y="184" width="99" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-tV-DiZ">
                                 <rect key="frame" x="179" y="683" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="5Cn-SD-gKn" kind="show" id="10V-TA-693"/>
+                                    <action selector="goToDiagnostic:" destination="UzO-8E-YZl" eventType="touchUpInside" id="rDO-MA-PyG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SET UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-4p-rrM">
+                                <rect key="frame" x="158" y="109" width="99" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4zD-8U-vrm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -184,9 +170,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd8-vq-mRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3341" y="-124"/>
+            <point key="canvasLocation" x="4148" y="-123"/>
         </scene>
-        <!--View Controller-->
+        <!--Diagnostic 1/8-->
         <scene sceneID="akw-cI-05S">
             <objects>
                 <viewController id="9Rk-bv-tnq" sceneMemberID="viewController">
@@ -194,13 +180,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIAGNOSTIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxn-k0-dta">
-                                <rect key="frame" x="119" y="191" width="176" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cl-yF-pkM">
                                 <rect key="frame" x="179" y="684" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -213,13 +192,13 @@
                         <viewLayoutGuide key="safeArea" id="z5E-Pm-0as"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="y3J-63-32s"/>
+                    <navigationItem key="navigationItem" title="Diagnostic 1/8" id="y3J-63-32s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAu-HE-KtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4250.7246376811599" y="-850.44642857142856"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--Log In-->
         <scene sceneID="zMB-sA-ihn">
             <objects>
                 <viewController id="e8J-To-Ocd" customClass="LogInViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,18 +212,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOG IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbL-hJ-SN8">
-                                <rect key="frame" x="160" y="191" width="95" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-dY-WIu">
                                 <rect key="frame" x="29" y="320" width="357" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-hH-GIG">
                                 <rect key="frame" x="179" y="660" width="56" height="30"/>
@@ -258,11 +230,10 @@
                         <viewLayoutGuide key="safeArea" id="iqN-NY-UbL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GKL-yv-79W"/>
+                    <navigationItem key="navigationItem" title="Log In" id="GKL-yv-79W"/>
                     <connections>
                         <outlet property="emailTextField" destination="KAA-NQ-AyJ" id="m3f-ei-9Ks"/>
                         <outlet property="passwordTextField" destination="NoI-dY-WIu" id="Lm3-Xq-Ycn"/>
-                        <segue destination="iad-Wq-mdd" kind="show" identifier="successfulLogIn" id="ahO-jl-0af"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmQ-EN-LuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,6 +258,14 @@
                                 <rect key="frame" x="0.0" y="236" width="414" height="319"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWU-IX-9xQ">
+                                <rect key="frame" x="153" y="170" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Diagnostic"/>
+                                <connections>
+                                    <action selector="goToDiagnostic:" destination="204-kv-tbE" eventType="touchUpInside" id="Haj-OQ-Srq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2WL-La-ZM3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -313,8 +292,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NeD-5f-js9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SzT-Yv-Il3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SzT-Yv-Il3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -326,7 +305,7 @@
             </objects>
             <point key="canvasLocation" x="138" y="149"/>
         </scene>
-        <!--View Controller-->
+        <!--Diagnostic 2/8-->
         <scene sceneID="Nal-Cr-BJM">
             <objects>
                 <viewController id="awS-vl-zxa" sceneMemberID="viewController">
@@ -334,35 +313,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DIAGNOSTIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPG-2T-l8o">
-                                <rect key="frame" x="119" y="191" width="176" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-ai-gae">
                                 <rect key="frame" x="179" y="684" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="b5G-mh-PyL" kind="show" id="PxT-ng-3Dk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f15-Em-JLM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Fw-Om-Owb"/>
+                    <navigationItem key="navigationItem" title="Diagnostic 2/8" id="1Fw-Om-Owb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8R-g2-U0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4928.985507246377" y="-850.44642857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Diagnostic 3/8-->
+        <scene sceneID="Uy1-8X-COg">
+            <objects>
+                <viewController id="b5G-mh-PyL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g0X-45-gq3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKx-Ke-wLB">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="NzN-E0-Zco" kind="show" id="r1h-QJ-Ny1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zYf-bs-qaM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 3/8" id="ZUd-Ax-0nP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHY-3L-qsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5639" y="-850"/>
+        </scene>
+        <!--Diagnostic Navigation Controller-->
         <scene sceneID="Fza-qj-SeG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxw-tu-oJn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DiagnosticNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qxw-tu-oJn" customClass="DiagnosticNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Wh-yZ-qce">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2Wh-yZ-qce">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -377,7 +378,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="R1B-Mn-Fhc">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-SD-gKn" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Cn-SD-gKn" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Zwa-El-9LC"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3hq-YB-Vnj">
@@ -397,13 +398,13 @@
         <!--Settings-->
         <scene sceneID="ck2-rH-avl">
             <objects>
-                <viewController id="kcQ-ch-IBP" sceneMemberID="viewController">
+                <viewController id="kcQ-ch-IBP" customClass="SettingsViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deA-Zi-49r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DASHBOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAZ-Gc-8sF">
-                                <rect key="frame" x="118" y="114" width="179" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAZ-Gc-8sF">
+                                <rect key="frame" x="138" y="114" width="140" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -413,6 +414,9 @@
                                 <rect key="frame" x="171" y="433" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="peace out!"/>
+                                <connections>
+                                    <action selector="logOut:" destination="kcQ-ch-IBP" eventType="touchUpInside" id="eny-SL-C8x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dBE-7U-UUU"/>
@@ -424,10 +428,137 @@
             </objects>
             <point key="canvasLocation" x="4251" y="1416"/>
         </scene>
+        <!--Diagnostic 4/8-->
+        <scene sceneID="MPC-2G-3st">
+            <objects>
+                <viewController id="NzN-E0-Zco" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VcL-TE-YOH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9G-3K-mqz">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="CfI-SO-olQ" kind="show" id="vxN-B6-OFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4D8-QE-Vb6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 4/8" id="dvt-Zh-CBh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHf-Jo-v8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6312" y="-850"/>
+        </scene>
+        <!--Diagnostic 5/8-->
+        <scene sceneID="HSM-2Q-ag1">
+            <objects>
+                <viewController id="CfI-SO-olQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pdl-1d-ake">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2No-nA-JmW">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="DKH-l5-JZS" kind="show" id="tgo-Cl-nis"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ctb-sK-tjf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 5/8" id="0Xf-nZ-O10"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ga-uV-4aT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7035" y="-850"/>
+        </scene>
+        <!--Diagnostic 6/8-->
+        <scene sceneID="3fY-nv-2Rg">
+            <objects>
+                <viewController id="DKH-l5-JZS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Anw-rL-pc2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xag-Od-1sx">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="8Yr-Sp-fu8" kind="show" id="ybT-hY-xeO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="njh-qp-GEU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 6/8" id="3Fl-75-IBv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbH-WO-REx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7706" y="-850"/>
+        </scene>
+        <!--Diagnostic 7/8-->
+        <scene sceneID="Bt2-q2-KnY">
+            <objects>
+                <viewController id="8Yr-Sp-fu8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LPE-fM-Y6k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-gy-IQ0">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <segue destination="cvr-uB-zNm" kind="show" id="ExC-F9-zWs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0eC-gz-raC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 7/8" id="Apx-0c-I9B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVQ-6x-fXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8390" y="-850"/>
+        </scene>
+        <!--Diagnostic 8/8-->
+        <scene sceneID="QKe-u4-UHW">
+            <objects>
+                <viewController id="cvr-uB-zNm" customClass="DiagnosticViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YQs-2q-8Br">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nO-Zx-dXO">
+                                <rect key="frame" x="179" y="683" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUMBIT"/>
+                                <connections>
+                                    <action selector="goToDash:" destination="cvr-uB-zNm" eventType="touchUpInside" id="Yao-MC-t6e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kQM-k2-MVu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Diagnostic 8/8" id="oSN-Dh-1Az"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQo-M1-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9100" y="-850"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ahO-jl-0af"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

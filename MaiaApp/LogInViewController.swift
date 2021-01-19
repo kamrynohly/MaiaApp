@@ -44,7 +44,11 @@ class LogInViewController: UIViewController {
                     let snapshotThing = snapshot.value as? [String : String] ?? [:]
                     if snapshotThing["username"] != nil {
                         print("Login Successful")
-                        self.performSegue(withIdentifier: "successfulLogIn", sender: self)
+                        if let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
+                        {
+                            home.modalPresentationStyle = .fullScreen
+                            UIApplication.topViewController()?.present(home, animated: true, completion: nil)
+                        }
                     }
                     else {
                         print("Problem")

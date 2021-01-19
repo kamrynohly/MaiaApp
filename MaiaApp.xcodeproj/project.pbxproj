@@ -19,6 +19,10 @@
 		D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B325B26F5B00D2096C /* LogInViewController.swift */; };
 		D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B625B26F6900D2096C /* SignUpViewController.swift */; };
 		D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B925B26F9800D2096C /* DashboardViewController.swift */; };
+		D90F153525B629C600D2096C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153425B629C600D2096C /* SettingsViewController.swift */; };
+		D90F153825B6361D00D2096C /* DiagnosticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153725B6361D00D2096C /* DiagnosticViewController.swift */; };
+		D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153A25B6363C00D2096C /* SetUpViewController.swift */; };
+		D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153D25B6365700D2096C /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		D90F14B325B26F5B00D2096C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D90F14B625B26F6900D2096C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D90F14B925B26F9800D2096C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		D90F153425B629C600D2096C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D90F153725B6361D00D2096C /* DiagnosticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticViewController.swift; sourceTree = "<group>"; };
+		D90F153A25B6363C00D2096C /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		D90F153D25B6365700D2096C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,9 @@
 				9AF5B2EE25AFBA440018515B /* SceneDelegate.swift */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
 				9AF5B2F225AFBA440018515B /* Main.storyboard */,
+				D90F153D25B6365700D2096C /* AboutViewController.swift */,
+				D90F153A25B6363C00D2096C /* SetUpViewController.swift */,
+				D90F153725B6361D00D2096C /* DiagnosticViewController.swift */,
 				D90F14B325B26F5B00D2096C /* LogInViewController.swift */,
 				D90F14B625B26F6900D2096C /* SignUpViewController.swift */,
 				D90F14B925B26F9800D2096C /* DashboardViewController.swift */,
@@ -85,6 +96,7 @@
 				9AF5B2FD25AFBA460018515B /* Info.plist */,
 				9AF5B2F525AFBA440018515B /* MaiaApp.xcdatamodeld */,
 				D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */,
+				D90F153425B629C600D2096C /* SettingsViewController.swift */,
 			);
 			path = MaiaApp;
 			sourceTree = "<group>";
@@ -223,11 +235,15 @@
 			files = (
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
+				D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */,
+				D90F153825B6361D00D2096C /* DiagnosticViewController.swift in Sources */,
 				9AF5B2F125AFBA440018515B /* ViewController.swift in Sources */,
+				D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
 				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
+				D90F153525B629C600D2096C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
