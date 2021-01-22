@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A45708A25BA98D1009A9509 /* QuestionOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45708925BA98D1009A9509 /* QuestionOneViewController.swift */; };
+		9A45709025BA994C009A9509 /* QuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45708F25BA994C009A9509 /* QuestionTwoViewController.swift */; };
+		9A45709325BA9957009A9509 /* QuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709225BA9957009A9509 /* QuestionThreeViewController.swift */; };
+		9A45709625BA9960009A9509 /* QuestionFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709525BA9960009A9509 /* QuestionFourViewController.swift */; };
+		9A45709925BA996D009A9509 /* QuestionFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709825BA996D009A9509 /* QuestionFiveViewController.swift */; };
+		9A45709C25BA997A009A9509 /* QuestionSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709B25BA997A009A9509 /* QuestionSixViewController.swift */; };
+		9A45709F25BA9984009A9509 /* QuestionSevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709E25BA9984009A9509 /* QuestionSevenViewController.swift */; };
 		9A73A1D425BA8AE300A12207 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A73A1C125BA8AE300A12207 /* Poppins-ExtraLight.ttf */; };
 		9A73A1D525BA8AE300A12207 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A73A1C225BA8AE300A12207 /* Poppins-ThinItalic.ttf */; };
 		9A73A1D625BA8AE300A12207 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A73A1C325BA8AE300A12207 /* Poppins-ExtraLightItalic.ttf */; };
@@ -49,6 +56,13 @@
 
 /* Begin PBXFileReference section */
 		22ABD0A2F386C53F1B80C562 /* Pods-MaiaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaiaApp.debug.xcconfig"; path = "Target Support Files/Pods-MaiaApp/Pods-MaiaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9A45708925BA98D1009A9509 /* QuestionOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOneViewController.swift; sourceTree = "<group>"; };
+		9A45708F25BA994C009A9509 /* QuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTwoViewController.swift; sourceTree = "<group>"; };
+		9A45709225BA9957009A9509 /* QuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionThreeViewController.swift; sourceTree = "<group>"; };
+		9A45709525BA9960009A9509 /* QuestionFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFourViewController.swift; sourceTree = "<group>"; };
+		9A45709825BA996D009A9509 /* QuestionFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFiveViewController.swift; sourceTree = "<group>"; };
+		9A45709B25BA997A009A9509 /* QuestionSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSixViewController.swift; sourceTree = "<group>"; };
+		9A45709E25BA9984009A9509 /* QuestionSevenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSevenViewController.swift; sourceTree = "<group>"; };
 		9A73A1C125BA8AE300A12207 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9A73A1C225BA8AE300A12207 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		9A73A1C325BA8AE300A12207 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -104,6 +118,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A45708525BA97D6009A9509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5B2F225AFBA440018515B /* Main.storyboard */,
+				9AF5B2FA25AFBA460018515B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A45708625BA97E3009A9509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D90F154325BA615000D2096C /* CirclePost.swift */,
+				D90F154025B7669300D2096C /* RoundButton.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A45708725BA97F2009A9509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5B2F025AFBA440018515B /* ViewController.swift */,
+				D90F154625BA637900D2096C /* InsideCircleViewController.swift */,
+				D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */,
+				D90F153D25B6365700D2096C /* AboutViewController.swift */,
+				D90F153A25B6363C00D2096C /* SetUpViewController.swift */,
+				D90F14B325B26F5B00D2096C /* LogInViewController.swift */,
+				D90F14B625B26F6900D2096C /* SignUpViewController.swift */,
+				D90F14B925B26F9800D2096C /* DashboardViewController.swift */,
+				D90F153425B629C600D2096C /* SettingsViewController.swift */,
+				9A45708C25BA98D7009A9509 /* Diagnostic Question Views */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A45708C25BA98D7009A9509 /* Diagnostic Question Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A45708925BA98D1009A9509 /* QuestionOneViewController.swift */,
+				9A45708F25BA994C009A9509 /* QuestionTwoViewController.swift */,
+				9A45709225BA9957009A9509 /* QuestionThreeViewController.swift */,
+				9A45709525BA9960009A9509 /* QuestionFourViewController.swift */,
+				9A45709825BA996D009A9509 /* QuestionFiveViewController.swift */,
+				9A45709B25BA997A009A9509 /* QuestionSixViewController.swift */,
+				9A45709E25BA9984009A9509 /* QuestionSevenViewController.swift */,
+				D90F153725B6361D00D2096C /* DiagnosticViewController.swift */,
+			);
+			path = "Diagnostic Question Views";
+			sourceTree = "<group>";
+		};
 		9A73A1C025BA8AE300A12207 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,25 +216,14 @@
 			children = (
 				9AF5B2EC25AFBA440018515B /* AppDelegate.swift */,
 				9AF5B2EE25AFBA440018515B /* SceneDelegate.swift */,
-				9AF5B2F025AFBA440018515B /* ViewController.swift */,
-				9AF5B2F225AFBA440018515B /* Main.storyboard */,
-				D90F154325BA615000D2096C /* CirclePost.swift */,
-				D90F154625BA637900D2096C /* InsideCircleViewController.swift */,
-				D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */,
-				D90F154025B7669300D2096C /* RoundButton.swift */,
-				D90F153D25B6365700D2096C /* AboutViewController.swift */,
-				D90F153A25B6363C00D2096C /* SetUpViewController.swift */,
-				D90F153725B6361D00D2096C /* DiagnosticViewController.swift */,
-				D90F14B325B26F5B00D2096C /* LogInViewController.swift */,
-				D90F14B625B26F6900D2096C /* SignUpViewController.swift */,
-				D90F14B925B26F9800D2096C /* DashboardViewController.swift */,
+				9A45708525BA97D6009A9509 /* View */,
+				9A45708625BA97E3009A9509 /* Model */,
+				9A45708725BA97F2009A9509 /* Controller */,
 				9AF5B2F825AFBA460018515B /* Assets.xcassets */,
 				9A73A1C025BA8AE300A12207 /* Poppins */,
-				9AF5B2FA25AFBA460018515B /* LaunchScreen.storyboard */,
 				9AF5B2FD25AFBA460018515B /* Info.plist */,
 				9AF5B2F525AFBA440018515B /* MaiaApp.xcdatamodeld */,
 				D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */,
-				D90F153425B629C600D2096C /* SettingsViewController.swift */,
 			);
 			path = MaiaApp;
 			sourceTree = "<group>";
@@ -327,17 +380,24 @@
 			files = (
 				D90F154125B7669300D2096C /* RoundButton.swift in Sources */,
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
+				9A45709F25BA9984009A9509 /* QuestionSevenViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
+				9A45708A25BA98D1009A9509 /* QuestionOneViewController.swift in Sources */,
+				9A45709925BA996D009A9509 /* QuestionFiveViewController.swift in Sources */,
 				D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */,
 				D90F154425BA615000D2096C /* CirclePost.swift in Sources */,
 				D90F153825B6361D00D2096C /* DiagnosticViewController.swift in Sources */,
 				9AF5B2F125AFBA440018515B /* ViewController.swift in Sources */,
 				D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */,
+				9A45709C25BA997A009A9509 /* QuestionSixViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
+				9A45709625BA9960009A9509 /* QuestionFourViewController.swift in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
 				D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */,
+				9A45709025BA994C009A9509 /* QuestionTwoViewController.swift in Sources */,
 				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
+				9A45709325BA9957009A9509 /* QuestionThreeViewController.swift in Sources */,
 				D90F154725BA637900D2096C /* InsideCircleViewController.swift in Sources */,
 				D90F153525B629C600D2096C /* SettingsViewController.swift in Sources */,
 			);

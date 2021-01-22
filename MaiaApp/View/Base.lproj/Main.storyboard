@@ -216,7 +216,7 @@
         <!--Diagnostic 1/8-->
         <scene sceneID="akw-cI-05S">
             <objects>
-                <viewController id="9Rk-bv-tnq" sceneMemberID="viewController">
+                <viewController id="9Rk-bv-tnq" customClass="QuestionOneViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Zc-qa-UlQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,14 +226,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="awS-vl-zxa" kind="show" id="dXD-bv-vru"/>
+                                    <action selector="submitPressed:" destination="9Rk-bv-tnq" eventType="touchUpInside" id="qzx-fQ-tB9"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-gh-pjF" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="373" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z5E-Pm-0as"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 1/8" id="y3J-63-32s"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="FEE-gh-pjF" id="nSw-je-DtK"/>
+                        <segue destination="awS-vl-zxa" kind="show" identifier="toNextQuestion" id="1c8-Mu-XNt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAu-HE-KtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,7 +390,7 @@
         <!--Diagnostic 2/8-->
         <scene sceneID="Nal-Cr-BJM">
             <objects>
-                <viewController id="awS-vl-zxa" sceneMemberID="viewController">
+                <viewController id="awS-vl-zxa" customClass="QuestionTwoViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fmK-go-ga0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,14 +400,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="b5G-mh-PyL" kind="show" id="PxT-ng-3Dk"/>
+                                    <action selector="submitPressed:" destination="awS-vl-zxa" eventType="touchUpInside" id="Ddu-lo-0Nn"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUm-yP-aRM" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="366" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f15-Em-JLM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 2/8" id="1Fw-Om-Owb"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="HUm-yP-aRM" id="kRA-xz-Ruc"/>
+                        <segue destination="b5G-mh-PyL" kind="show" identifier="toNextQuestion" id="6ow-Xi-Hx6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8R-g2-U0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,7 +443,7 @@
         <!--Diagnostic 3/8-->
         <scene sceneID="Uy1-8X-COg">
             <objects>
-                <viewController id="b5G-mh-PyL" sceneMemberID="viewController">
+                <viewController id="b5G-mh-PyL" customClass="QuestionThreeViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0X-45-gq3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,14 +453,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="NzN-E0-Zco" kind="show" id="r1h-QJ-Ny1"/>
+                                    <action selector="submitPressed:" destination="b5G-mh-PyL" eventType="touchUpInside" id="1Dd-jE-6mG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlM-uo-asD" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="364" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zYf-bs-qaM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 3/8" id="ZUd-Ax-0nP"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="AlM-uo-asD" id="RfF-VO-0Bg"/>
+                        <segue destination="NzN-E0-Zco" kind="show" identifier="toNextQuestion" id="dhS-nb-Jc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHY-3L-qsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -504,7 +585,7 @@
         <!--Diagnostic 4/8-->
         <scene sceneID="MPC-2G-3st">
             <objects>
-                <viewController id="NzN-E0-Zco" sceneMemberID="viewController">
+                <viewController id="NzN-E0-Zco" customClass="QuestionFourViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcL-TE-YOH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,14 +595,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="CfI-SO-olQ" kind="show" id="vxN-B6-OFo"/>
+                                    <action selector="submitPressed:" destination="NzN-E0-Zco" eventType="touchUpInside" id="doo-YR-7Qz"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pD9-Ue-aH3" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="367" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4D8-QE-Vb6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 4/8" id="dvt-Zh-CBh"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="pD9-Ue-aH3" id="T5X-lz-8L6"/>
+                        <segue destination="CfI-SO-olQ" kind="show" identifier="toNextQuestion" id="qLP-KS-jv2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHf-Jo-v8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -530,7 +638,7 @@
         <!--Diagnostic 5/8-->
         <scene sceneID="HSM-2Q-ag1">
             <objects>
-                <viewController id="CfI-SO-olQ" sceneMemberID="viewController">
+                <viewController id="CfI-SO-olQ" customClass="QuestionFiveViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdl-1d-ake">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,14 +648,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="DKH-l5-JZS" kind="show" id="tgo-Cl-nis"/>
+                                    <action selector="submitPressed:" destination="CfI-SO-olQ" eventType="touchUpInside" id="Jn9-xT-2Qa"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDG-Gu-aWJ" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="357" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ctb-sK-tjf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 5/8" id="0Xf-nZ-O10"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="aDG-Gu-aWJ" id="NWk-pz-kO9"/>
+                        <segue destination="DKH-l5-JZS" kind="show" identifier="toNextQuestion" id="EI4-xn-gIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ga-uV-4aT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -556,7 +691,7 @@
         <!--Diagnostic 6/8-->
         <scene sceneID="3fY-nv-2Rg">
             <objects>
-                <viewController id="DKH-l5-JZS" sceneMemberID="viewController">
+                <viewController id="DKH-l5-JZS" customClass="QuestionSixViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Anw-rL-pc2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,14 +701,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="8Yr-Sp-fu8" kind="show" id="ybT-hY-xeO"/>
+                                    <action selector="submitPressed:" destination="DKH-l5-JZS" eventType="touchUpInside" id="A0V-gu-CbC"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-1L-S2b" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="353" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njh-qp-GEU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 6/8" id="3Fl-75-IBv"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="Xba-1L-S2b" id="kfA-vp-KFX"/>
+                        <segue destination="8Yr-Sp-fu8" kind="show" identifier="toNextQuestion" id="9HL-Kp-uKq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbH-WO-REx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -582,7 +744,7 @@
         <!--Diagnostic 7/8-->
         <scene sceneID="Bt2-q2-KnY">
             <objects>
-                <viewController id="8Yr-Sp-fu8" sceneMemberID="viewController">
+                <viewController id="8Yr-Sp-fu8" customClass="QuestionSevenViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPE-fM-Y6k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,14 +754,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUMBIT"/>
                                 <connections>
-                                    <segue destination="cvr-uB-zNm" kind="show" id="ExC-F9-zWs"/>
+                                    <action selector="submitPressed:" destination="8Yr-Sp-fu8" eventType="touchUpInside" id="f0E-Kg-cch"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHI-xx-kLr" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="357" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0eC-gz-raC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 7/8" id="Apx-0c-I9B"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="nHI-xx-kLr" id="5cG-mv-oWm"/>
+                        <segue destination="cvr-uB-zNm" kind="show" identifier="toNextQuestion" id="WCO-zx-mfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVQ-6x-fXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -621,11 +810,37 @@
                                     <action selector="goToDash:" destination="cvr-uB-zNm" eventType="touchUpInside" id="Yao-MC-t6e"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fV9-vT-IMW" customClass="MSCircularSlider">
+                                <rect key="frame" x="87" y="349" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_currentValue">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumAngle">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_filledColor">
+                                        <color key="value" red="0.60392156860000001" green="0.8862745098" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kQM-k2-MVu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 8/8" id="oSN-Dh-1Az"/>
+                    <connections>
+                        <outlet property="sliderInput" destination="fV9-vT-IMW" id="51Q-Cm-mSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQo-M1-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1026,6 +1241,15 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="AlM-uo-asD">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="FEE-gh-pjF">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="HUm-yP-aRM">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
         <designable name="Naw-hH-GIG">
             <size key="intrinsicContentSize" width="56" height="30"/>
         </designable>
@@ -1034,6 +1258,21 @@
         </designable>
         <designable name="U4j-fR-bz3">
             <size key="intrinsicContentSize" width="73" height="36"/>
+        </designable>
+        <designable name="Xba-1L-S2b">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="aDG-Gu-aWJ">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="fV9-vT-IMW">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="nHI-xx-kLr">
+            <size key="intrinsicContentSize" width="220" height="220"/>
+        </designable>
+        <designable name="pD9-Ue-aH3">
+            <size key="intrinsicContentSize" width="220" height="220"/>
         </designable>
         <designable name="z8X-9q-U1o">
             <size key="intrinsicContentSize" width="60" height="30"/>
