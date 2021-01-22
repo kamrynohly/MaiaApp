@@ -24,6 +24,9 @@
 		D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153A25B6363C00D2096C /* SetUpViewController.swift */; };
 		D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F153D25B6365700D2096C /* AboutViewController.swift */; };
 		D90F154125B7669300D2096C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154025B7669300D2096C /* RoundButton.swift */; };
+		D90F154425BA615000D2096C /* CirclePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154325BA615000D2096C /* CirclePost.swift */; };
+		D90F154725BA637900D2096C /* InsideCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154625BA637900D2096C /* InsideCircleViewController.swift */; };
+		D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		D90F153A25B6363C00D2096C /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		D90F153D25B6365700D2096C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D90F154025B7669300D2096C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		D90F154325BA615000D2096C /* CirclePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePost.swift; sourceTree = "<group>"; };
+		D90F154625BA637900D2096C /* InsideCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCircleViewController.swift; sourceTree = "<group>"; };
+		D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCirclePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 				9AF5B2EE25AFBA440018515B /* SceneDelegate.swift */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
 				9AF5B2F225AFBA440018515B /* Main.storyboard */,
+				D90F154325BA615000D2096C /* CirclePost.swift */,
+				D90F154625BA637900D2096C /* InsideCircleViewController.swift */,
+				D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */,
 				D90F154025B7669300D2096C /* RoundButton.swift */,
 				D90F153D25B6365700D2096C /* AboutViewController.swift */,
 				D90F153A25B6363C00D2096C /* SetUpViewController.swift */,
@@ -240,13 +249,16 @@
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
 				D90F153E25B6365700D2096C /* AboutViewController.swift in Sources */,
+				D90F154425BA615000D2096C /* CirclePost.swift in Sources */,
 				D90F153825B6361D00D2096C /* DiagnosticViewController.swift in Sources */,
 				9AF5B2F125AFBA440018515B /* ViewController.swift in Sources */,
 				D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
+				D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */,
 				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
+				D90F154725BA637900D2096C /* InsideCircleViewController.swift in Sources */,
 				D90F153525B629C600D2096C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
