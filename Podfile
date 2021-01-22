@@ -11,4 +11,5 @@ target 'MaiaApp' do
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Database'
     pod 'Charts'
+    pod 'MSCircularSlider'
 end

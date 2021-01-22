@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import MSCircularSlider
 
 class QuestionFiveViewController: UIViewController {
+    
+    var valueArray = [Double]()
 
+    @IBOutlet weak var sliderInput: MSCircularSlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func submitPressed(_ sender: UIButton) {
+        let num = Double(sliderInput.currentValue)
+        valueArray.append(num)
+        performSegue(withIdentifier: "toNextQuestion", sender: self)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextQuestionPage = segue.destination as! QuestionSixViewController
+        nextQuestionPage.valueArray = valueArray
+    }
+    
 
 }

@@ -1241,15 +1241,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="AlM-uo-asD">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="FEE-gh-pjF">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="HUm-yP-aRM">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
         <designable name="Naw-hH-GIG">
             <size key="intrinsicContentSize" width="56" height="30"/>
         </designable>
@@ -1258,21 +1249,6 @@
         </designable>
         <designable name="U4j-fR-bz3">
             <size key="intrinsicContentSize" width="73" height="36"/>
-        </designable>
-        <designable name="Xba-1L-S2b">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="aDG-Gu-aWJ">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="fV9-vT-IMW">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="nHI-xx-kLr">
-            <size key="intrinsicContentSize" width="220" height="220"/>
-        </designable>
-        <designable name="pD9-Ue-aH3">
-            <size key="intrinsicContentSize" width="220" height="220"/>
         </designable>
         <designable name="z8X-9q-U1o">
             <size key="intrinsicContentSize" width="60" height="30"/>
