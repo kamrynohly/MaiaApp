@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class NewCirclePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -39,12 +41,67 @@ class NewCirclePostViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var circleToPost: UITextField!
     @IBOutlet weak var typePost: UITextField!
+    
     @IBOutlet weak var subject: UITextField!
     @IBOutlet weak var desc: UITextView!
     @IBOutlet weak var website: UITextField!
     
     @IBAction func submitPost(_ sender: Any) {
-        
+        if checkCompleteness() {
+            let userID = Auth.auth().currentUser?.uid
+            let infoReference = Database.database().reference().child("users").child(userID!).child("personalInfo")
+            let globalPostReference = Database.database().reference().child("circles").child(circleToPost.text!).child(typePost.text!)
+            let localPostReference = Database.database().reference().child("users").child(userID!).child("circles").child(circleToPost.text!).child(typePost.text!)
+            infoReference.observe(.value) { (snapshot) in
+                //snapshot should be formatted
+                let snapshot = snapshot.value as? [String : String] ?? [:]
+                var nameOfMainUser = ""
+                
+                if snapshot["username"] != nil {
+                    nameOfMainUser = String(snapshot["username"]!)
+                }
+                else {
+                    nameOfMainUser = "Error loading name"
+                }
+                
+                
+                let localPostIDReference = localPostReference.childByAutoId()
+                let randomIDKey = String(localPostIDReference.key!)
+                let timestamp = NSDate().timeIntervalSince1970
+                
+                //this is the main information saved to both the user's local reference, and then globally
+                var postDictionary: [String: Any]
+                if self.typePost.text != "Resources" {
+                    postDictionary = ["postBy": nameOfMainUser, "subject": self.subject.text!, "desc": self.desc.text!, "senderID": userID!, "postID": randomIDKey, "postTime": timestamp]
+                } else {
+                    postDictionary = ["postBy": nameOfMainUser, "subject": self.subject.text!, "desc": self.desc.text!, "senderID": userID!, "postID": randomIDKey, "link": self.website.text!, "postTime": timestamp]
+                }
+                
+                
+                localPostIDReference.setValue(postDictionary) {
+                    (error, reference) in
+                    
+                    if error != nil {
+                        print(error!)
+                    }
+                    else {
+                        print("Event saved successfully to local ref.")
+                    }
+                }
+                globalPostReference.child(randomIDKey).child("postInfo").setValue(postDictionary) {
+                    (error, reference) in
+                    if error != nil {
+                        print(error!)
+                    }
+                    else {
+                        print("Event saved successfully to global ref.")
+                    }
+                }
+            }
+            
+            
+            let _ = navigationController?.popViewController(animated: true)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +111,14 @@ class NewCirclePostViewController: UIViewController, UIPickerViewDelegate, UIPic
         typePicker.tag = 1
         circleToPost.inputView = circlePicker
         typePost.inputView = typePicker
+        
+        circlePicker.delegate = self
+        circlePicker.dataSource = self
+//        circlePicker.showsSelectionIndicator = true
+        
+        typePicker.delegate = self
+        typePicker.dataSource = self
+//        typePicker.showsSelectionIndicator = true
         // Do any additional setup after loading the view.
     }
     // MARK: SOFIA PICK UP HERE
@@ -73,6 +138,8 @@ class NewCirclePostViewController: UIViewController, UIPickerViewDelegate, UIPic
             alertPrompt.addAction(confirmAction)
                         
             present(alertPrompt, animated: true, completion: nil)
+        } else {
+            complete = true
         }
             return complete
     }
