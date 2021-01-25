@@ -19,14 +19,25 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
 
     @IBOutlet weak var whichType: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-//    override func viewWillAppear() {
-//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated) // No need for semicolon
+//        retrievePosts()
 //    }
+    var refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         retrievePosts()
+        tableView.refreshControl = refreshControl
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+//        self.tableView.reloadData()
+    }
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        retrievePosts()
+        
     }
     
 //    var noPosts: Bool
@@ -60,6 +71,7 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
                 cell.subject.text = posts[indexPath.row]["subject"] as? String
                 cell.desc.text = posts[indexPath.row]["desc"] as? String
                 cell.postTime.text = posts[indexPath.row]["postTime"] as? String
+                return cell
 //                cell.textLabel!.text = privateList[indexPath.row]
                 break
             case 1:
@@ -68,6 +80,7 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
                 cell.subject.text = posts[indexPath.row]["subject"] as? String
                 cell.desc.text = posts[indexPath.row]["desc"] as? String
                 cell.postTime.text = posts[indexPath.row]["postTime"] as? String
+                return cell
                 // insert link stuff here somehow
                 break
                 
@@ -77,6 +90,7 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
                 cell.subject.text = posts[indexPath.row]["subject"] as? String
                 cell.desc.text = posts[indexPath.row]["desc"] as? String
                 cell.postTime.text = posts[indexPath.row]["postTime"] as? String
+                return cell
                 break
                 
             default:
@@ -85,31 +99,59 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
             }
         } else {
             var cell = tableView.dequeueReusableCell(withIdentifier: "noneCell", for: indexPath)
+            
+            return cell
+            
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var toReturn = 0
+        if posts.count == 0 {
+            toReturn = 101
+        } else {
+            toReturn = 142
+        }
+        return CGFloat(toReturn)
     }
     
     func retrievePosts() {
         posts.removeAll()
         let ref = Database.database().reference().child("circles")
-        ref.observe(.childAdded, with: { (snapshot) -> Void in
-            print(snapshot)
-            if (snapshot.childSnapshot(forPath: self.whichCircle.title!).value != nil) {
-                print("HI")
-                print("I WORK\nHIII")
-                let childSnap = snapshot.childSnapshot(forPath: self.whichCircle.title!)
-                if (childSnap.childSnapshot(forPath: self.types[self.whichType.selectedSegmentIndex]).value != nil) {
-                    print("HI")
-                    print("I WORK\nHIII")
-                    let thePosts = childSnap.childSnapshot(forPath: self.types[self.whichType.selectedSegmentIndex])
-                    for child in thePosts.children.allObjects as! [DataSnapshot] {
-                        
+        ref.observe(.value) { snapshot in
+//            print(snapshot)
+            // snapshot.childSnapshot(forPath: self.whichCircle.title!).value != nil
+            let snapData = snapshot.value as! [String: Any]
+            let circles = snapData["circles"]
+//            print(snapData)
+//            print(snapData[self.whichCircle.title!])
+            if (snapData[self.whichCircle.title!] != nil) {
+//                print("HI")
+//                print("I WORK\nHIII")
+//                let childSnap = snapshot.childSnapshot(forPath: self.whichCircle.title!)
+                
+                let childSnap = snapData[self.whichCircle.title!] as! [String: Any]
+                if (childSnap[self.types[self.whichType.selectedSegmentIndex]] != nil) {
+//                    print("HI")
+//                    print("I WORK\nHIII")
+                    let thePosts = childSnap[self.types[self.whichType.selectedSegmentIndex]]
+//                    print(thePosts)
+                    for child in thePosts as! [String: Any] {
                         var toAdd = child.value as? [String: Any] ?? [:]
-                        self.posts.append(toAdd)
+                        var finalAdd = toAdd["postInfo"] as? [String: Any] ?? [:]
+                        self.posts.append(finalAdd)
+                        
                     }
+                    self.tableView.reloadData()
                 }
             }
-          })
+            
+
+          }
+//        print(posts)
+        self.refreshControl.endRefreshing()
+//        self.tablactivityIndicatorView.stopAnimating()
     }
     
 
@@ -138,6 +180,10 @@ class RecPostTableViewCell: UITableViewCell {
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var postTime: UILabel!
+    @IBOutlet weak var star: UIButton!
+    @IBAction func starred(_ sender: Any) {
+        
+    }
     
 }
 
