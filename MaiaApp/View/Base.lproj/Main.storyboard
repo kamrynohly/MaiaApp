@@ -241,6 +241,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-gh-pjF" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="373" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEU-GM-2V5">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -267,6 +276,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Diagnostic 1/8" id="y3J-63-32s"/>
                     <connections>
+                        <outlet property="labelValue" destination="GEU-GM-2V5" id="ruP-r4-80a"/>
                         <outlet property="sliderInput" destination="FEE-gh-pjF" id="nSw-je-DtK"/>
                         <segue destination="awS-vl-zxa" kind="show" identifier="toNextQuestion" id="1c8-Mu-XNt"/>
                     </connections>
@@ -415,6 +425,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUm-yP-aRM" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="366" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDJ-C5-245">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -442,6 +461,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 2/8" id="1Fw-Om-Owb"/>
                     <connections>
                         <outlet property="sliderInput" destination="HUm-yP-aRM" id="kRA-xz-Ruc"/>
+                        <outlet property="valueLabel" destination="YDJ-C5-245" id="2Qf-TP-Kai"/>
                         <segue destination="b5G-mh-PyL" kind="show" identifier="toNextQuestion" id="6ow-Xi-Hx6"/>
                     </connections>
                 </viewController>
@@ -468,6 +488,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlM-uo-asD" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="364" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-fY-ZFO">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -495,6 +524,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 3/8" id="ZUd-Ax-0nP"/>
                     <connections>
                         <outlet property="sliderInput" destination="AlM-uo-asD" id="RfF-VO-0Bg"/>
+                        <outlet property="valueLabel" destination="9Ai-fY-ZFO" id="KOg-HZ-5Bs"/>
                         <segue destination="NzN-E0-Zco" kind="show" identifier="toNextQuestion" id="dhS-nb-Jc3"/>
                     </connections>
                 </viewController>
@@ -610,6 +640,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pD9-Ue-aH3" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="367" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1q-ig-KkZ">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -637,6 +676,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 4/8" id="dvt-Zh-CBh"/>
                     <connections>
                         <outlet property="sliderInput" destination="pD9-Ue-aH3" id="T5X-lz-8L6"/>
+                        <outlet property="valueLabel" destination="B1q-ig-KkZ" id="iWk-7I-i0H"/>
                         <segue destination="CfI-SO-olQ" kind="show" identifier="toNextQuestion" id="qLP-KS-jv2"/>
                     </connections>
                 </viewController>
@@ -663,6 +703,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDG-Gu-aWJ" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="357" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WF-i1-mCh">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -690,6 +739,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 5/8" id="0Xf-nZ-O10"/>
                     <connections>
                         <outlet property="sliderInput" destination="aDG-Gu-aWJ" id="NWk-pz-kO9"/>
+                        <outlet property="valueLabel" destination="0WF-i1-mCh" id="Od5-9u-FYP"/>
                         <segue destination="DKH-l5-JZS" kind="show" identifier="toNextQuestion" id="EI4-xn-gIi"/>
                     </connections>
                 </viewController>
@@ -716,6 +766,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-1L-S2b" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="353" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsK-Am-mNT">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -743,6 +802,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 6/8" id="3Fl-75-IBv"/>
                     <connections>
                         <outlet property="sliderInput" destination="Xba-1L-S2b" id="kfA-vp-KFX"/>
+                        <outlet property="valueLabel" destination="KsK-Am-mNT" id="jZt-5L-qqi"/>
                         <segue destination="8Yr-Sp-fu8" kind="show" identifier="toNextQuestion" id="9HL-Kp-uKq"/>
                     </connections>
                 </viewController>
@@ -769,6 +829,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHI-xx-kLr" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="357" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as7-i5-hxK">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -796,6 +865,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 7/8" id="Apx-0c-I9B"/>
                     <connections>
                         <outlet property="sliderInput" destination="nHI-xx-kLr" id="5cG-mv-oWm"/>
+                        <outlet property="valueLabel" destination="as7-i5-hxK" id="FGl-Ag-qbH"/>
                         <segue destination="cvr-uB-zNm" kind="show" identifier="toNextQuestion" id="WCO-zx-mfh"/>
                     </connections>
                 </viewController>
@@ -822,6 +892,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fV9-vT-IMW" customClass="MSCircularSlider">
                                 <rect key="frame" x="87" y="349" width="240" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbq-Qm-jPM">
+                                        <rect key="frame" x="85" y="95" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_minimumValue">
@@ -849,6 +928,7 @@
                     <navigationItem key="navigationItem" title="Diagnostic 8/8" id="oSN-Dh-1Az"/>
                     <connections>
                         <outlet property="sliderInput" destination="fV9-vT-IMW" id="51Q-Cm-mSa"/>
+                        <outlet property="valueLabel" destination="zbq-Qm-jPM" id="Szv-yB-9w8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQo-M1-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -965,35 +1045,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUk-pe-u39">
-                                <rect key="frame" x="39" y="658" width="59.5" height="28"/>
+                                <rect key="frame" x="39" y="658" width="52" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s3b-lx-kyv">
-                                <rect key="frame" x="32" y="185" width="350" height="109.5"/>
+                                <rect key="frame" x="42.5" y="185" width="329" height="109.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Focal Points " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbG-HT-msa">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="45"/>
                                         <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-5c-dWC">
-                                        <rect key="frame" x="0.0" y="65" width="350" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="65" width="329" height="44.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw8-Ug-nMh">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="44.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
                                                 <state key="normal" title="Finance"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZq-yd-7tI">
-                                                <rect key="frame" x="135" y="0.0" width="80" height="44.5"/>
+                                                <rect key="frame" x="128" y="0.0" width="73" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
                                                 <state key="normal" title="Education"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGh-hD-Blx">
-                                                <rect key="frame" x="270" y="0.0" width="80" height="44.5"/>
+                                                <rect key="frame" x="256" y="0.0" width="73" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
                                                 <state key="normal" title="Fitness"/>
                                             </button>
@@ -1006,7 +1086,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gz-pn-vE6">
-                                <rect key="frame" x="119.5" y="658" width="18" height="32"/>
+                                <rect key="frame" x="112" y="658" width="18" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>

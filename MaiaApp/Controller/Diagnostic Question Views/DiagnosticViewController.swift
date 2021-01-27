@@ -11,24 +11,27 @@ import FirebaseAuth
 import MSCircularSlider
 import CoreData
 
-class DiagnosticViewController: UIViewController {
+class DiagnosticViewController: UIViewController, MSCircularSliderDelegate {
     
     var valueArray = [Double]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 
+    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var sliderInput: MSCircularSlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let userID = Auth.auth().currentUser?.uid
-//        var ref : DatabaseReference!
-//        ref = Database.database().reference().child("users").child(userID!).child("personalInfo")
-        
-        print("\(valueArray) this works")
+        sliderInput.delegate = self
+
+       // print("\(valueArray) this works")
+        valueLabel.text = String(format: "%.1f", sliderInput.currentValue)
+
     }
     
+    func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
+        valueLabel.text = String(format: "%.1f", value)
+    }
     
     func saveData() {
         do {

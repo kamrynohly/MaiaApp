@@ -8,17 +8,22 @@
 import UIKit
 import MSCircularSlider
 
-class QuestionTwoViewController: UIViewController {
+class QuestionTwoViewController: UIViewController, MSCircularSliderDelegate {
 
     var valueArray = [Double]()
-    
+    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var sliderInput: MSCircularSlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderInput.delegate = self
+        valueLabel.text = String(format: "%.1f", sliderInput.currentValue)
 
     }
     
+    func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
+        valueLabel.text = String(format: "%.1f", value)
+    }
 
     @IBAction func submitPressed(_ sender: UIButton) {
         let num = Double(sliderInput.currentValue)
