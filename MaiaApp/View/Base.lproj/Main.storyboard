@@ -1045,7 +1045,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUk-pe-u39">
-                                <rect key="frame" x="39" y="658" width="52" height="23.5"/>
+                                <rect key="frame" x="39" y="658" width="59.5" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1086,7 +1086,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gz-pn-vE6">
-                                <rect key="frame" x="112" y="658" width="18" height="32"/>
+                                <rect key="frame" x="119.5" y="658" width="18" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
