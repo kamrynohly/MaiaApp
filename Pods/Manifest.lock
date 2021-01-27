@@ -76,6 +76,11 @@ PODS:
   - GoogleUtilities/UserDefaults (7.2.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - IBMSwiftSDKCore (1.0.0)
+  - IBMWatsonAssistantV1 (3.6.0):
+    - IBMSwiftSDKCore (~> 1.0.0)
+  - IBMWatsonToneAnalyzerV3 (3.6.0):
+    - IBMSwiftSDKCore (~> 1.0.0)
   - leveldb-library (1.22)
   - MSCircularSlider (1.3.2)
   - nanopb (2.30907.0):
@@ -91,6 +96,8 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
+  - IBMWatsonAssistantV1
+  - IBMWatsonToneAnalyzerV3
   - MSCircularSlider
 
 SPEC REPOS:
@@ -107,6 +114,9 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - IBMSwiftSDKCore
+    - IBMWatsonAssistantV1
+    - IBMWatsonToneAnalyzerV3
     - leveldb-library
     - MSCircularSlider
     - nanopb
@@ -125,11 +135,14 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IBMSwiftSDKCore: 54ad77b03a4d27b218ba514580197db3b89a96ca
+  IBMWatsonAssistantV1: 8e572187fcd383e732506910bfe470ba27096dc6
+  IBMWatsonToneAnalyzerV3: eca44fa804c5d60156c5b05c64fa20fe4d99d5cc
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 1ac2855f3fe2a142c0fde912f32a29d668dd70b4
+PODFILE CHECKSUM: f342d36eac976ae6a2f09abdbb7a3fffa1dbd22e
 
 COCOAPODS: 1.10.0

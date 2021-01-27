@@ -12,4 +12,6 @@ target 'MaiaApp' do
 	pod 'Firebase/Database'
     pod 'Charts'
     pod 'MSCircularSlider'
+    pod 'IBMWatsonToneAnalyzerV3'
+    pod 'IBMWatsonAssistantV1'
 end
