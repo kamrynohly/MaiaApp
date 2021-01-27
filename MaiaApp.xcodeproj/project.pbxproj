@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0E460825C0D42100CF5BF0 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E460725C0D42100CF5BF0 /* GoalsViewController.swift */; };
+		9A0E460C25C0D48E00CF5BF0 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E460A25C0D48E00CF5BF0 /* GoalTableViewCell.swift */; };
+		9A0E460D25C0D48E00CF5BF0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E460B25C0D48E00CF5BF0 /* TableViewCell.xib */; };
+		9A0E461025C0D4BD00CF5BF0 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E460F25C0D4BD00CF5BF0 /* Goal.swift */; };
+		9A0E461625C0DAEA00CF5BF0 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E461525C0DAEA00CF5BF0 /* AddGoalViewController.swift */; };
 		9A45708A25BA98D1009A9509 /* QuestionOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45708925BA98D1009A9509 /* QuestionOneViewController.swift */; };
 		9A45709025BA994C009A9509 /* QuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45708F25BA994C009A9509 /* QuestionTwoViewController.swift */; };
 		9A45709325BA9957009A9509 /* QuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A45709225BA9957009A9509 /* QuestionThreeViewController.swift */; };
@@ -39,6 +44,7 @@
 		9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AF5B2F525AFBA440018515B /* MaiaApp.xcdatamodeld */; };
 		9AF5B2F925AFBA460018515B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5B2F825AFBA460018515B /* Assets.xcassets */; };
 		9AF5B2FC25AFBA460018515B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5B2FA25AFBA460018515B /* LaunchScreen.storyboard */; };
+		9AFE750125C0F77500DC6C9D /* SelfImprovementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE750025C0F77500DC6C9D /* SelfImprovementViewController.swift */; };
 		B143823B15FE36DF461BFB26 /* Pods_MaiaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC45E204B8D8FBA3EB79E0D /* Pods_MaiaApp.framework */; };
 		D90F147F25B26BDE00D2096C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */; };
 		D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F14B325B26F5B00D2096C /* LogInViewController.swift */; };
@@ -56,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		22ABD0A2F386C53F1B80C562 /* Pods-MaiaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaiaApp.debug.xcconfig"; path = "Target Support Files/Pods-MaiaApp/Pods-MaiaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9A0E460725C0D42100CF5BF0 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		9A0E460A25C0D48E00CF5BF0 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
+		9A0E460B25C0D48E00CF5BF0 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		9A0E460F25C0D4BD00CF5BF0 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		9A0E461525C0DAEA00CF5BF0 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		9A45708925BA98D1009A9509 /* QuestionOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOneViewController.swift; sourceTree = "<group>"; };
 		9A45708F25BA994C009A9509 /* QuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTwoViewController.swift; sourceTree = "<group>"; };
 		9A45709225BA9957009A9509 /* QuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionThreeViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +101,7 @@
 		9AF5B2F825AFBA460018515B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF5B2FB25AFBA460018515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AF5B2FD25AFBA460018515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AFE750025C0F77500DC6C9D /* SelfImprovementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfImprovementViewController.swift; sourceTree = "<group>"; };
 		CA5B3D8935976F0036BAFB54 /* Pods-MaiaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaiaApp.release.xcconfig"; path = "Target Support Files/Pods-MaiaApp/Pods-MaiaApp.release.xcconfig"; sourceTree = "<group>"; };
 		CDC45E204B8D8FBA3EB79E0D /* Pods_MaiaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaiaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90F147E25B26BDE00D2096C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 			children = (
 				D90F154325BA615000D2096C /* CirclePost.swift */,
 				D90F154025B7669300D2096C /* RoundButton.swift */,
+				9A0E460F25C0D4BD00CF5BF0 /* Goal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +152,8 @@
 		9A45708725BA97F2009A9509 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A0E460A25C0D48E00CF5BF0 /* GoalTableViewCell.swift */,
+				9A0E460B25C0D48E00CF5BF0 /* TableViewCell.xib */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
 				D90F154625BA637900D2096C /* InsideCircleViewController.swift */,
 				D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */,
@@ -149,6 +164,9 @@
 				D90F14B925B26F9800D2096C /* DashboardViewController.swift */,
 				D90F153425B629C600D2096C /* SettingsViewController.swift */,
 				9A45708C25BA98D7009A9509 /* Diagnostic Question Views */,
+				9A0E460725C0D42100CF5BF0 /* GoalsViewController.swift */,
+				9A0E461525C0DAEA00CF5BF0 /* AddGoalViewController.swift */,
+				9AFE750025C0F77500DC6C9D /* SelfImprovementViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +340,7 @@
 				9AF5B2F925AFBA460018515B /* Assets.xcassets in Resources */,
 				9AF5B2F425AFBA440018515B /* Main.storyboard in Resources */,
 				9A73A1E525BA8AE300A12207 /* Poppins-Italic.ttf in Resources */,
+				9A0E460D25C0D48E00CF5BF0 /* TableViewCell.xib in Resources */,
 				9A73A1D725BA8AE300A12207 /* Poppins-BoldItalic.ttf in Resources */,
 				9A73A1D925BA8AE300A12207 /* Poppins-Medium.ttf in Resources */,
 				9A73A1E625BA8AE300A12207 /* Poppins-MediumItalic.ttf in Resources */,
@@ -379,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90F154125B7669300D2096C /* RoundButton.swift in Sources */,
+				9A0E461625C0DAEA00CF5BF0 /* AddGoalViewController.swift in Sources */,
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
 				9A45709F25BA9984009A9509 /* QuestionSevenViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
@@ -391,12 +411,16 @@
 				D90F153B25B6363C00D2096C /* SetUpViewController.swift in Sources */,
 				9A45709C25BA997A009A9509 /* QuestionSixViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
+				9AFE750125C0F77500DC6C9D /* SelfImprovementViewController.swift in Sources */,
 				9A45709625BA9960009A9509 /* QuestionFourViewController.swift in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
 				D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */,
+				9A0E460C25C0D48E00CF5BF0 /* GoalTableViewCell.swift in Sources */,
 				9A45709025BA994C009A9509 /* QuestionTwoViewController.swift in Sources */,
+				9A0E461025C0D4BD00CF5BF0 /* Goal.swift in Sources */,
 				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
+				9A0E460825C0D42100CF5BF0 /* GoalsViewController.swift in Sources */,
 				9A45709325BA9957009A9509 /* QuestionThreeViewController.swift in Sources */,
 				D90F154725BA637900D2096C /* InsideCircleViewController.swift in Sources */,
 				D90F153525B629C600D2096C /* SettingsViewController.swift in Sources */,

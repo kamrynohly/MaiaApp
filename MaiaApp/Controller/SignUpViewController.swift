@@ -11,7 +11,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
@@ -53,6 +52,10 @@ class SignUpViewController: UIViewController {
                             ref = Database.database().reference().child("users").child(userID!).child("personalInfo")
                             let infoDict : [String : Any] = ["username" : self.username.text!]
                             ref.setValue(infoDict)
+                            
+                            //for creation of goals data location
+                            var goalsRef = Database.database().reference().child("users").child(userID!).child("goals")
+                           
                             
                             self.performSegue(withIdentifier: "successSignUp", sender: self)
                             

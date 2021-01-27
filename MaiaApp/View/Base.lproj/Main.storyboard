@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,6 +11,9 @@
     <customFonts key="customFonts">
         <array key="Poppins-Black.ttf">
             <string>Poppins-Black</string>
+        </array>
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
         </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
@@ -950,18 +953,197 @@
         <!--Self Improvement-->
         <scene sceneID="fwA-fQ-bUS">
             <objects>
-                <viewController id="aRj-gp-xjX" sceneMemberID="viewController">
+                <viewController id="aRj-gp-xjX" customClass="SelfImprovementViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Q-hK-Tfq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've been doing ____ lately!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-aH-HR1">
+                                <rect key="frame" x="92" y="576.5" width="230" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUk-pe-u39">
+                                <rect key="frame" x="39" y="658" width="59.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s3b-lx-kyv">
+                                <rect key="frame" x="32" y="185" width="350" height="109.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Focal Points " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbG-HT-msa">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="45"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Black" family="Poppins" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-5c-dWC">
+                                        <rect key="frame" x="0.0" y="65" width="350" height="44.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw8-Ug-nMh">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
+                                                <state key="normal" title="Finance"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZq-yd-7tI">
+                                                <rect key="frame" x="135" y="0.0" width="80" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
+                                                <state key="normal" title="Education"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGh-hD-Blx">
+                                                <rect key="frame" x="270" y="0.0" width="80" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="16"/>
+                                                <state key="normal" title="Fitness"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCs-tE-w5m" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="320" width="374" height="257"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gz-pn-vE6">
+                                <rect key="frame" x="119.5" y="658" width="18" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="9Z9-Hv-Xzo" kind="show" id="iiC-Ee-Tc3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jwg-fd-W8l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lCs-tE-w5m" firstAttribute="centerX" secondItem="MMv-aH-HR1" secondAttribute="centerX" id="1rj-GV-HuC"/>
+                            <constraint firstItem="IUk-pe-u39" firstAttribute="top" secondItem="MMv-aH-HR1" secondAttribute="bottom" constant="40.5" id="ApE-ed-9SK"/>
+                            <constraint firstItem="7gz-pn-vE6" firstAttribute="leading" secondItem="IUk-pe-u39" secondAttribute="trailing" constant="21" id="IZ3-cv-kOZ"/>
+                            <constraint firstItem="s3b-lx-kyv" firstAttribute="top" secondItem="jwg-fd-W8l" secondAttribute="top" constant="45" id="Pp5-bc-2sx"/>
+                            <constraint firstItem="IUk-pe-u39" firstAttribute="leading" secondItem="jwg-fd-W8l" secondAttribute="leading" constant="39" id="Ygs-nW-qm3"/>
+                            <constraint firstItem="IUk-pe-u39" firstAttribute="top" secondItem="7gz-pn-vE6" secondAttribute="top" id="aZ1-OF-Dqz"/>
+                            <constraint firstItem="lCs-tE-w5m" firstAttribute="centerY" secondItem="d9Q-hK-Tfq" secondAttribute="centerY" id="def-vF-pws"/>
+                            <constraint firstItem="MMv-aH-HR1" firstAttribute="centerX" secondItem="s3b-lx-kyv" secondAttribute="centerX" id="jVF-Bx-OKR"/>
+                            <constraint firstAttribute="bottom" secondItem="MMv-aH-HR1" secondAttribute="bottom" constant="278.5" id="q5c-eE-4mq"/>
+                            <constraint firstItem="s3b-lx-kyv" firstAttribute="centerX" secondItem="d9Q-hK-Tfq" secondAttribute="centerX" id="rvg-n2-A0z"/>
+                            <constraint firstItem="lCs-tE-w5m" firstAttribute="leading" secondItem="d9Q-hK-Tfq" secondAttribute="leadingMargin" id="sBX-fn-hn0"/>
+                            <constraint firstItem="MMv-aH-HR1" firstAttribute="top" secondItem="lCs-tE-w5m" secondAttribute="bottom" constant="20" id="vX5-Ij-Fsb"/>
+                            <constraint firstItem="lCs-tE-w5m" firstAttribute="top" secondItem="s3b-lx-kyv" secondAttribute="bottom" constant="45" id="wAG-9S-xaR"/>
+                            <constraint firstItem="MMv-aH-HR1" firstAttribute="leading" secondItem="jwg-fd-W8l" secondAttribute="leading" constant="92" id="ymg-CV-rRI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Self Improvement" id="CgE-mb-nDa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCa-Vi-1Tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5161" y="2067"/>
+            <point key="canvasLocation" x="5160.8695652173919" y="2065.8482142857142"/>
+        </scene>
+        <!--Goals-->
+        <scene sceneID="Vxh-9n-Baj">
+            <objects>
+                <viewController id="9Z9-Hv-Xzo" userLabel="Goals" customClass="GoalsViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q9c-rD-91Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0gz-ov-Xp0">
+                                <rect key="frame" x="20" y="200" width="374" height="563"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" id="uYL-8N-aBp" customClass="GoalTableViewCell" customModule="MaiaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uYL-8N-aBp" id="QmS-5C-GyK">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X6z-KW-oaL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0gz-ov-Xp0" firstAttribute="leading" secondItem="X6z-KW-oaL" secondAttribute="leading" constant="20" id="4rD-It-I9G"/>
+                            <constraint firstItem="X6z-KW-oaL" firstAttribute="trailing" secondItem="0gz-ov-Xp0" secondAttribute="trailing" constant="20" id="KaO-Aq-zi0"/>
+                            <constraint firstItem="X6z-KW-oaL" firstAttribute="bottom" secondItem="0gz-ov-Xp0" secondAttribute="bottom" constant="50" id="Tuf-fz-9bR"/>
+                            <constraint firstItem="0gz-ov-Xp0" firstAttribute="top" secondItem="X6z-KW-oaL" secondAttribute="top" constant="60" id="hnr-gF-CL4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Goals" id="3Qp-Qx-eRu">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="3jP-a9-e1t">
+                            <connections>
+                                <segue destination="K08-Sa-1Eq" kind="show" id="XZS-Vh-Exs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0gz-ov-Xp0" id="2Hg-KZ-M4L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kA8-yX-5cQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5856.521739130435" y="2065.8482142857142"/>
+        </scene>
+        <!--Add Goal-->
+        <scene sceneID="xix-4K-5HQ">
+            <objects>
+                <viewController id="K08-Sa-1Eq" userLabel="Add Goal" customClass="AddGoalViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJM-tr-df5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-Ee-Tgy">
+                                <rect key="frame" x="20" y="157" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ics-0v-U5s">
+                                <rect key="frame" x="20" y="186" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAT-X9-KgF">
+                                <rect key="frame" x="20" y="248" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Manifest your goal into existence!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-Md-j1W">
+                                <rect key="frame" x="20" y="277" width="374" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRN-4t-X8W">
+                                <rect key="frame" x="163" y="529" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Let's do this!"/>
+                                <connections>
+                                    <action selector="createGoal:" destination="K08-Sa-1Eq" eventType="touchUpInside" id="hae-w8-Gzn"/>
+                                    <segue destination="9Z9-Hv-Xzo" kind="show" id="RWq-fb-MYv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s5y-Yx-0WC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Goal" id="z2K-9z-LTY"/>
+                    <connections>
+                        <outlet property="goalDescription" destination="pyf-Md-j1W" id="Ir0-1e-B2s"/>
+                        <outlet property="goalTitleLabel" destination="Ics-0v-U5s" id="1Sf-yF-fiS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bic-Mz-b5r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6709" y="1784"/>
         </scene>
         <!--Self-Improvement-->
         <scene sceneID="CIa-s3-iLq">
@@ -1463,12 +1645,16 @@
             <size key="intrinsicContentSize" width="66" height="36"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="iiC-Ee-Tc3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt.heart.fill" catalog="system" width="128" height="109"/>
         <image name="circles.hexagonpath" catalog="system" width="128" height="112"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
