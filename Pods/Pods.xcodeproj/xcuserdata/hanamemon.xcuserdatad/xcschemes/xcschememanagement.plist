@@ -88,6 +88,26 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>IBMSwiftSDKCore.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>IBMWatsonAssistantV1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>IBMWatsonToneAnalyzerV3.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>MSCircularSlider.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 		<key>Pods-MaiaApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>

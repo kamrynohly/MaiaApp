@@ -21,6 +21,11 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        // main page gradient
+        gradientLayer.colors = [UIColor(red: 0.82, green: 0.94, blue: 0.84, alpha: 1.00).cgColor,  UIColor(red: 0.80, green: 0.93, blue: 0.96, alpha: 1.00).cgColor, UIColor(red: 0.83, green: 0.76, blue: 0.84, alpha: 1.00).cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         // Do any additional setup after loading the view.
     }
     

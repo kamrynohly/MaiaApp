@@ -17,6 +17,11 @@ class QuestionThreeViewController: UIViewController, MSCircularSliderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        // GREEN AND WHITE
+        gradientLayer.colors = [UIColor(red: 0.82, green: 0.94, blue: 0.84, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor ]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         sliderInput.delegate = self
         valueLabel.text = String(format: "%.1f", sliderInput.currentValue)
 
