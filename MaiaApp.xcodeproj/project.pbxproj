@@ -58,6 +58,11 @@
 		D90F154425BA615000D2096C /* CirclePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154325BA615000D2096C /* CirclePost.swift */; };
 		D90F154725BA637900D2096C /* InsideCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154625BA637900D2096C /* InsideCircleViewController.swift */; };
 		D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */; };
+		D9C7B19325C3AD6F00D027A3 /* CirclesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7B19225C3AD6F00D027A3 /* CirclesMainViewController.swift */; };
+		D9C7B19625C4B4B500D027A3 /* RantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7B19525C4B4B400D027A3 /* RantViewController.swift */; };
+		D9C7B19925C4C5A100D027A3 /* AnalyzeRantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7B19825C4C5A100D027A3 /* AnalyzeRantViewController.swift */; };
+		D9C7B19D25C4D3A700D027A3 /* SelfCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7B19C25C4D3A700D027A3 /* SelfCareViewController.swift */; };
+		D9C7B1CB25C5143C00D027A3 /* CareDataBreakdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7B1CA25C5143C00D027A3 /* CareDataBreakdownViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +121,11 @@
 		D90F154325BA615000D2096C /* CirclePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePost.swift; sourceTree = "<group>"; };
 		D90F154625BA637900D2096C /* InsideCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCircleViewController.swift; sourceTree = "<group>"; };
 		D90F154925BA638F00D2096C /* NewCirclePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCirclePostViewController.swift; sourceTree = "<group>"; };
+		D9C7B19225C3AD6F00D027A3 /* CirclesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesMainViewController.swift; sourceTree = "<group>"; };
+		D9C7B19525C4B4B400D027A3 /* RantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RantViewController.swift; sourceTree = "<group>"; };
+		D9C7B19825C4C5A100D027A3 /* AnalyzeRantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeRantViewController.swift; sourceTree = "<group>"; };
+		D9C7B19C25C4D3A700D027A3 /* SelfCareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCareViewController.swift; sourceTree = "<group>"; };
+		D9C7B1CA25C5143C00D027A3 /* CareDataBreakdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareDataBreakdownViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,8 @@
 		9A45708725BA97F2009A9509 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9C7B1CA25C5143C00D027A3 /* CareDataBreakdownViewController.swift */,
+				D9C7B19C25C4D3A700D027A3 /* SelfCareViewController.swift */,
 				9A0E460A25C0D48E00CF5BF0 /* GoalTableViewCell.swift */,
 				9A0E460B25C0D48E00CF5BF0 /* TableViewCell.xib */,
 				9AF5B2F025AFBA440018515B /* ViewController.swift */,
@@ -167,6 +179,9 @@
 				9A0E460725C0D42100CF5BF0 /* GoalsViewController.swift */,
 				9A0E461525C0DAEA00CF5BF0 /* AddGoalViewController.swift */,
 				9AFE750025C0F77500DC6C9D /* SelfImprovementViewController.swift */,
+				D9C7B19225C3AD6F00D027A3 /* CirclesMainViewController.swift */,
+				D9C7B19525C4B4B400D027A3 /* RantViewController.swift */,
+				D9C7B19825C4C5A100D027A3 /* AnalyzeRantViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,8 +413,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90F154125B7669300D2096C /* RoundButton.swift in Sources */,
+				D9C7B19625C4B4B500D027A3 /* RantViewController.swift in Sources */,
 				9A0E461625C0DAEA00CF5BF0 /* AddGoalViewController.swift in Sources */,
 				D90F14B725B26F6900D2096C /* SignUpViewController.swift in Sources */,
+				D9C7B19925C4C5A100D027A3 /* AnalyzeRantViewController.swift in Sources */,
 				9A45709F25BA9984009A9509 /* QuestionSevenViewController.swift in Sources */,
 				D90F14BA25B26F9800D2096C /* DashboardViewController.swift in Sources */,
 				9A45708A25BA98D1009A9509 /* QuestionOneViewController.swift in Sources */,
@@ -412,13 +429,16 @@
 				9A45709C25BA997A009A9509 /* QuestionSixViewController.swift in Sources */,
 				9AF5B2F725AFBA440018515B /* MaiaApp.xcdatamodeld in Sources */,
 				9AFE750125C0F77500DC6C9D /* SelfImprovementViewController.swift in Sources */,
+				D9C7B1CB25C5143C00D027A3 /* CareDataBreakdownViewController.swift in Sources */,
 				9A45709625BA9960009A9509 /* QuestionFourViewController.swift in Sources */,
 				9AF5B2ED25AFBA440018515B /* AppDelegate.swift in Sources */,
 				D90F154A25BA638F00D2096C /* NewCirclePostViewController.swift in Sources */,
 				9A0E460C25C0D48E00CF5BF0 /* GoalTableViewCell.swift in Sources */,
+				D9C7B19325C3AD6F00D027A3 /* CirclesMainViewController.swift in Sources */,
 				9A45709025BA994C009A9509 /* QuestionTwoViewController.swift in Sources */,
 				9A0E461025C0D4BD00CF5BF0 /* Goal.swift in Sources */,
 				D90F14B425B26F5B00D2096C /* LogInViewController.swift in Sources */,
+				D9C7B19D25C4D3A700D027A3 /* SelfCareViewController.swift in Sources */,
 				9AF5B2EF25AFBA440018515B /* SceneDelegate.swift in Sources */,
 				9A0E460825C0D42100CF5BF0 /* GoalsViewController.swift in Sources */,
 				9A45709325BA9957009A9509 /* QuestionThreeViewController.swift in Sources */,

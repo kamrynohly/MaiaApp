@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 
 class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
+    
+    
     @IBOutlet weak var whichCircle: UINavigationItem!
     
     @IBAction func typeChanged(_ sender: Any) {
@@ -16,6 +18,8 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
         self.tableView.reloadData()
     }
     
+    var typeIndex = 0
+    var circleName = ""
 
     @IBOutlet weak var whichType: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +32,10 @@ class InsideCircleViewController: UIViewController, UITableViewDelegate,  UITabl
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        print("THE TYPE INDEX: " + String(typeIndex))
+        print("THE CIRCLE NAME: " + circleName)
+        whichType.selectedSegmentIndex = typeIndex
+        whichCircle.title = circleName
         retrievePosts()
         tableView.refreshControl = refreshControl
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")

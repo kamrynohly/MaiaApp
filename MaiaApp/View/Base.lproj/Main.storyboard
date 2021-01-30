@@ -107,7 +107,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNb-rK-8m0">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNb-rK-8m0">
                                 <rect key="frame" x="29" y="316" width="357" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -289,8 +289,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how satisfied are you with your work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-ke-lpd">
-                                <rect key="frame" x="20" y="197" width="450" height="129"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how would you rate your mental health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-ke-lpd">
+                                <rect key="frame" x="20" y="197" width="374" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -650,20 +650,43 @@ connections</string>
             </objects>
             <point key="canvasLocation" x="4251" y="3496"/>
         </scene>
-        <!--View Controller-->
+        <!--RANT-->
         <scene sceneID="nEr-Z8-Ubj">
             <objects>
-                <viewController id="QMe-qX-YxO" sceneMemberID="viewController">
+                <viewController id="QMe-qX-YxO" customClass="RantViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qXu-62-dnb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJc-Po-ai2">
+                                <rect key="frame" x="151" y="699" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="let it drift away..."/>
+                                <connections>
+                                    <action selector="sendText:" destination="QMe-qX-YxO" eventType="touchUpInside" id="G44-f7-vdR"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P75-nl-qeL">
+                                <rect key="frame" x="20" y="152" width="374" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="V8l-2X-kMN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="RANT" id="fIo-KW-U7k"/>
+                    <connections>
+                        <outlet property="rantBox" destination="P75-nl-qeL" id="dfK-EN-q4E"/>
+                        <segue destination="kfJ-0u-pXU" kind="show" identifier="showDetail" id="KxB-ZV-vFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLu-zF-g7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5909" y="1270"/>
+            <point key="canvasLocation" x="5982.608695652174" y="1083.4821428571429"/>
         </scene>
         <!--Diagnostic 4/8-->
         <scene sceneID="MPC-2G-3st">
@@ -785,8 +808,8 @@ physical condition</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how satisfied are you with your financial condition" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLS-iL-KPM">
-                                <rect key="frame" x="20" y="166" width="394" height="130"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how often do you relax" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLS-iL-KPM">
+                                <rect key="frame" x="20" y="225" width="290" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -855,8 +878,8 @@ physical condition</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how often do you relax" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ih-fhr">
-                                <rect key="frame" x="20" y="161" width="374" height="130"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how satisfied are you with your goal(s) progress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ih-fhr">
+                                <rect key="frame" x="20" y="161" width="363" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -875,7 +898,7 @@ physical condition</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbH-WO-REx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7706" y="-850"/>
+            <point key="canvasLocation" x="7705.7971014492759" y="-850.44642857142856"/>
         </scene>
         <!--Diagnostic 7/8-->
         <scene sceneID="Bt2-q2-KnY">
@@ -925,7 +948,7 @@ physical condition</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how would you rate your mental health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMX-mU-s1s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how satisfied are you with your financial condition" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMX-mU-s1s">
                                 <rect key="frame" x="20" y="186" width="374" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
@@ -995,11 +1018,9 @@ physical condition</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="_commaSeparatedLabels" value="0, 10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-1t-1xn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="how satisfied are you with your work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-1t-1xn">
                                 <rect key="frame" x="20" y="168" width="374" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">how would you rate your
-physical condition</string>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1016,12 +1037,12 @@ physical condition</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQo-M1-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9100" y="-850"/>
+            <point key="canvasLocation" x="9098.5507246376819" y="-850.44642857142856"/>
         </scene>
         <!--Self Care-->
         <scene sceneID="jPc-92-OQN">
             <objects>
-                <viewController id="Yp3-0b-iMG" sceneMemberID="viewController">
+                <viewController id="Yp3-0b-iMG" customClass="SelfCareViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J2n-ed-tmH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1037,22 +1058,15 @@ physical condition</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You've been doing ___ lately!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-fJ-8aM">
-                                                <rect key="frame" x="96" y="54" width="222" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's get you closer to 💯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc1-ke-qD0">
-                                                <rect key="frame" x="109" y="430" width="196" height="21"/>
+                                                <rect key="frame" x="109" y="410" width="196" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-sE-HBr">
-                                                <rect key="frame" x="87" y="485" width="242" height="32"/>
+                                                <rect key="frame" x="87" y="455" width="242" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <segments>
                                                     <segment title="Physical"/>
@@ -1060,6 +1074,13 @@ physical condition</string>
                                                     <segment title="Emotional"/>
                                                 </segments>
                                             </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You've been doing ___ lately!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-fJ-8aM">
+                                                <rect key="frame" x="39" y="54" width="336" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -1087,8 +1108,19 @@ physical condition</string>
                             <constraint firstItem="kDp-hr-ZEg" firstAttribute="leading" secondItem="bGL-JG-Lzw" secondAttribute="leading" id="geO-qP-baJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Self Care" id="Nlh-iy-eZJ"/>
+                    <navigationItem key="navigationItem" title="Self Care" id="Nlh-iy-eZJ">
+                        <barButtonItem key="rightBarButtonItem" title="RANT &gt;" id="s8r-dN-7oh">
+                            <connections>
+                                <segue destination="QMe-qX-YxO" kind="show" id="stb-lo-mue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1100"/>
+                    <connections>
+                        <outlet property="graphView" destination="IKW-DE-u3I" id="SZ8-IE-ikk"/>
+                        <outlet property="status" destination="A3Y-fJ-8aM" id="amb-Nf-OB7"/>
+                        <segue destination="a23-cU-75P" kind="show" identifier="toBreakdown" id="7dT-hB-XOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PC8-8A-7OG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1197,6 +1229,10 @@ physical condition</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Self Improvement" id="CgE-mb-nDa"/>
+                    <connections>
+                        <outlet property="graphView" destination="lCs-tE-w5m" id="z61-Xc-Exa"/>
+                        <outlet property="status" destination="MMv-aH-HR1" id="w2n-9r-VGX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCa-Vi-1Tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1330,107 +1366,212 @@ physical condition</string>
         <!--Circles-->
         <scene sceneID="iWz-Ck-8eC">
             <objects>
-                <viewController id="tdw-dc-JWl" sceneMemberID="viewController">
+                <viewController id="tdw-dc-JWl" customClass="CirclesMainViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sHy-3C-pCd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnE-BO-q5m">
-                                <rect key="frame" x="20" y="192" width="177" height="162"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnE-BO-q5m" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="35" y="192" width="162" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Finance"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="finance:" destination="tdw-dc-JWl" eventType="touchUpInside" id="o8B-vU-xQW"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94G-es-KeE">
-                                <rect key="frame" x="217" y="387" width="177" height="162"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94G-es-KeE" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="217" y="387" width="162" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Education"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="education:" destination="tdw-dc-JWl" eventType="touchUpInside" id="03p-B2-Hhv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bom-yc-URR">
-                                <rect key="frame" x="20" y="584" width="177" height="162"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bom-yc-URR" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="35" y="584" width="162" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Fitness"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fitness:" destination="tdw-dc-JWl" eventType="touchUpInside" id="gId-iU-MmQ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-0T-eSS">
-                                <rect key="frame" x="205" y="584" width="53" height="49"/>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTw-RA-t9W" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="188" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGO-qe-lOc">
-                                <rect key="frame" x="205" y="641" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjR-BX-LDK">
-                                <rect key="frame" x="205" y="697" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gE-Fb-2dl">
-                                <rect key="frame" x="156" y="387" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-NQ-6Sg">
-                                <rect key="frame" x="156" y="444" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hc-kG-NSb">
-                                <rect key="frame" x="156" y="500" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTw-RA-t9W">
-                                <rect key="frame" x="205" y="192" width="53" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Glos"/>
+                                <state key="normal" image="lightbulb" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="zEX-ax-IGb" kind="show" id="cOy-ch-WwF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-2c-wGd">
-                                <rect key="frame" x="205" y="249" width="53" height="49"/>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-2c-wGd" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="205" y="249" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Shout"/>
+                                <state key="normal" image="folder" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="kOg-Ph-Ge6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-Bz-M6R">
-                                <rect key="frame" x="205" y="305" width="53" height="49"/>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-Bz-M6R" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="306" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="QnA"/>
+                                <state key="normal" image="questionmark.square" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="YRx-Dw-lrd"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-bm-WKA" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="174" y="382" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="lightbulb" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="PG3-xj-6xq"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-P3-NU6" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="160" y="443" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="folder" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="8sB-Ib-HIC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-uA-SHn" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="174" y="504" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="questionmark.square" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="7Mk-Ma-CaQ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-oe-3ns" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="577" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="lightbulb" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="Fek-if-omj"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-Me-GS0" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="205" y="641" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="folder" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="iqk-Yc-CY8"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnV-8N-hGw" customClass="RoundButton" customModule="MaiaApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="703" width="49" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.30588235289999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="questionmark.square" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToCircle:" destination="tdw-dc-JWl" eventType="touchUpInside" id="IOg-JI-eXC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PqA-pB-xdX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Circles" id="Oux-Fe-kQB"/>
+                    <connections>
+                        <outlet property="glo" destination="ZTw-RA-t9W" id="tyA-kq-BQM"/>
+                        <outlet property="glo2" destination="mSJ-bm-WKA" id="3Vn-P7-bCZ"/>
+                        <outlet property="glo3" destination="zeV-oe-3ns" id="gGD-3X-zvK"/>
+                        <outlet property="qna" destination="m8G-Bz-M6R" id="dOz-eD-Rih"/>
+                        <outlet property="qna2" destination="Hhs-uA-SHn" id="4QV-Wa-w5q"/>
+                        <outlet property="qna3" destination="bnV-8N-hGw" id="abK-rk-1at"/>
+                        <outlet property="resources" destination="PrP-2c-wGd" id="Agk-3F-VZA"/>
+                        <outlet property="resources2" destination="UTu-P3-NU6" id="1M1-Cg-sO3"/>
+                        <outlet property="resources3" destination="ZJd-Me-GS0" id="8rL-Hz-fiG"/>
+                        <segue destination="zEX-ax-IGb" kind="show" identifier="toCircles" id="5k1-4z-7ba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K67-Lx-l5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5161" y="2792"/>
+            <point key="canvasLocation" x="5160.8695652173919" y="2791.7410714285711"/>
         </scene>
         <!--Circles-->
         <scene sceneID="8BO-YU-GF8">
@@ -1451,10 +1592,10 @@ physical condition</string>
             </objects>
             <point key="canvasLocation" x="4251" y="2792"/>
         </scene>
-        <!--Finance-->
+        <!--InsideCircleViewController-->
         <scene sceneID="nuH-z2-XDw">
             <objects>
-                <viewController id="zEX-ax-IGb" customClass="InsideCircleViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InsideCircleViewController" title="InsideCircleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zEX-ax-IGb" customClass="InsideCircleViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fjI-VR-gGo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1769,19 +1910,99 @@ physical condition</string>
             </objects>
             <point key="canvasLocation" x="6710" y="2792"/>
         </scene>
+        <!--Analysis-->
+        <scene sceneID="DKB-ic-Dac">
+            <objects>
+                <viewController id="kfJ-0u-pXU" customClass="AnalyzeRantViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HzY-mJ-7Un">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi6-V7-4zE">
+                                <rect key="frame" x="140" y="714" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="okay, take me back!"/>
+                                <connections>
+                                    <action selector="goBack:" destination="kfJ-0u-pXU" eventType="touchUpInside" id="ioL-73-Pzz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It looks like you're feeling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ize-W5-uIO">
+                                <rect key="frame" x="109" y="191" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vly-io-Dge">
+                                <rect key="frame" x="133" y="230" width="149" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8ty-43-HHb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Analysis" id="AbF-VZ-35w"/>
+                    <connections>
+                        <outlet property="feelingLabel" destination="Vly-io-Dge" id="JsI-ku-bs7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0J-jj-Y1Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6709" y="1085"/>
+        </scene>
+        <!--Data Breakdown-->
+        <scene sceneID="Uxb-l1-Ewg">
+            <objects>
+                <viewController id="a23-cU-75P" customClass="CareDataBreakdownViewController" customModule="MaiaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kcD-XU-du1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlY-jc-aPf" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="236" width="414" height="319"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63U-bi-oJ0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SlY-jc-aPf" firstAttribute="leading" secondItem="63U-bi-oJ0" secondAttribute="leading" id="3zo-k2-n38"/>
+                            <constraint firstItem="63U-bi-oJ0" firstAttribute="bottom" secondItem="SlY-jc-aPf" secondAttribute="bottom" constant="258" id="HPa-UA-qLr"/>
+                            <constraint firstItem="SlY-jc-aPf" firstAttribute="centerX" secondItem="kcD-XU-du1" secondAttribute="centerX" id="Nub-W8-mlJ"/>
+                            <constraint firstItem="SlY-jc-aPf" firstAttribute="top" secondItem="kcD-XU-du1" secondAttribute="top" constant="236" id="PcZ-Hf-1Bp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Data Breakdown" id="eDe-JC-fvN"/>
+                    <connections>
+                        <outlet property="graphView" destination="SlY-jc-aPf" id="EIC-o3-vyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5a-C5-9JF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5159" y="589"/>
+        </scene>
     </scenes>
     <designables>
-        <designable name="AlM-uo-asD">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="94G-es-KeE">
+            <size key="intrinsicContentSize" width="69" height="30"/>
         </designable>
-        <designable name="FEE-gh-pjF">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="Bom-yc-URR">
+            <size key="intrinsicContentSize" width="49" height="30"/>
         </designable>
-        <designable name="HUm-yP-aRM">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="Hhs-uA-SHn">
+            <size key="intrinsicContentSize" width="19.5" height="22"/>
+        </designable>
+        <designable name="KnE-BO-q5m">
+            <size key="intrinsicContentSize" width="54" height="30"/>
         </designable>
         <designable name="Naw-hH-GIG">
             <size key="intrinsicContentSize" width="74" height="42"/>
+        </designable>
+        <designable name="PrP-2c-wGd">
+            <size key="intrinsicContentSize" width="23" height="22"/>
         </designable>
         <designable name="TnW-97-r1z">
             <size key="intrinsicContentSize" width="55" height="36"/>
@@ -1789,38 +2010,51 @@ physical condition</string>
         <designable name="U4j-fR-bz3">
             <size key="intrinsicContentSize" width="74" height="42"/>
         </designable>
-        <designable name="Xba-1L-S2b">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="UTu-P3-NU6">
+            <size key="intrinsicContentSize" width="23" height="22"/>
         </designable>
-        <designable name="aDG-Gu-aWJ">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="ZJd-Me-GS0">
+            <size key="intrinsicContentSize" width="23" height="22"/>
         </designable>
-        <designable name="fV9-vT-IMW">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="ZTw-RA-t9W">
+            <size key="intrinsicContentSize" width="19" height="22.5"/>
         </designable>
-        <designable name="nHI-xx-kLr">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="bnV-8N-hGw">
+            <size key="intrinsicContentSize" width="19.5" height="22"/>
         </designable>
-        <designable name="pD9-Ue-aH3">
-            <size key="intrinsicContentSize" width="220" height="220"/>
+        <designable name="m8G-Bz-M6R">
+            <size key="intrinsicContentSize" width="19.5" height="22"/>
+        </designable>
+        <designable name="mSJ-bm-WKA">
+            <size key="intrinsicContentSize" width="19" height="22.5"/>
         </designable>
         <designable name="z8X-9q-U1o">
             <size key="intrinsicContentSize" width="66" height="36"/>
         </designable>
+        <designable name="zeV-oe-3ns">
+            <size key="intrinsicContentSize" width="19" height="22.5"/>
+        </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="5k1-4z-7ba"/>
         <segue reference="iiC-Ee-Tc3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt.heart.fill" catalog="system" width="128" height="109"/>
         <image name="circles.hexagonpath" catalog="system" width="128" height="112"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

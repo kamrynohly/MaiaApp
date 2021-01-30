@@ -1,58 +1,65 @@
 //
-//  SelfImprovementViewController.swift
+//  SelfCareViewController.swift
 //  MaiaApp
 //
-//  Created by Kamryn Ohly on 1/26/21.
+//  Created by Sofia Ongele on 1/29/21.
 //
 
 import UIKit
 import Charts
 import CoreData
 
-class SelfImprovementViewController: UIViewController {
-    
-    var arrayOfUpdates = [Update]()
-    var averagesArray = [Double]()
-    var valuesDict = [String: Double]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    @IBOutlet weak var graphView: LineChartView!
-    @IBOutlet weak var status: UILabel!
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadData()
-        getAverages()
-        updateChart()
+class SelfCareViewController: UIViewController {
+        var arrayOfUpdates = [Update]()
+        var averagesArray = [Double]()
+        var valuesDict = [String: Double]()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
-            status.text = "We've been doing better this week!!"
-        } else {
-            status.text = "We have some room for improvement this week, and that's okay!"
+        @IBOutlet weak var status: UILabel!
+        @IBOutlet weak var graphView: LineChartView!
+        
+        
+        @objc func someAction(_ sender:UITapGestureRecognizer){
+            performSegue(withIdentifier: "toBreakdown", sender: self)
         }
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        // main page gradient
-        gradientLayer.colors = [UIColor(red: 0.80, green: 0.93, blue: 0.96, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor ]
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
         
-        // Do any additional setup after loading the view.
-    }
     
-    func getAverages() {
+       
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            loadData()
+            getAverages()
+            updateChart()
+            
+            let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
+            self.graphView.addGestureRecognizer(gesture)
+            
+            if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
+                status.text = "We've been doing better this week!!"
+            } else {
+                status.text = "We have some room for improvement this week, and that's okay!"
+            }
+            
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = self.view.bounds
+            // main page gradient
+            gradientLayer.colors = [UIColor(red: 0.80, green: 0.93, blue: 0.96, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor ]
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+        }
+        
+        func getAverages() {
             var total = 0.0
             var numOfQuestions = 0.0
             for i in 0..<arrayOfUpdates.count {
                 let item = arrayOfUpdates[i]
                 numOfQuestions = Double(item.numberOfQuestions)
                 let arrayOfResponses : [Double] = item.arrayOfResponses! as! [Double]
-                for value in 5...7 {
+                for value in 0...4 {
                     total += arrayOfResponses[value]
                 }
                 
-                averagesArray.append(total/3)
+                averagesArray.append(total/5)
                 total = 0.0
                 numOfQuestions = 0.0
             }
@@ -103,6 +110,7 @@ class SelfImprovementViewController: UIViewController {
             graphView.data = dataStuff
         }
 
+        
 
 
 }
