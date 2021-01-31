@@ -58,6 +58,7 @@ class AddGoalViewController: UIViewController {
                 }
             }
         }
+        let _ = navigationController?.popViewController(animated: true)
     }
     
 }
