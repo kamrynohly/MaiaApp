@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NeD-5f-js9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,6 +23,9 @@
         </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -213,15 +216,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nf-5j-e01">
-                                <rect key="frame" x="171" y="361" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-tV-DiZ">
-                                <rect key="frame" x="181" y="484" width="52" height="36"/>
+                                <rect key="frame" x="181" y="483" width="52" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                 <state key="normal" title="next &gt;">
@@ -229,13 +225,182 @@
                                 </state>
                                 <connections>
                                     <action selector="goToDiagnostic:" destination="UzO-8E-YZl" eventType="touchUpInside" id="rDO-MA-PyG"/>
+                                    <action selector="nextButton:" destination="UzO-8E-YZl" eventType="touchUpInside" id="QXl-xK-g0t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Push Notifications?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkP-mS-nEN">
+                                <rect key="frame" x="30" y="355" width="354" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Nxx-K9-jE6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
+                                <color key="textColor" red="0.1026582643" green="0.14027062060000001" blue="0.32158654930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this allows us to send quick reminders to help remind you of goals and resources!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-8a-PZu">
+                                <rect key="frame" x="30" y="380" width="354" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="WQq-ax-avH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="14"/>
+                                <color key="textColor" red="0.1026582643" green="0.14027062060000001" blue="0.32158654930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-9M-Gg8">
+                                <rect key="frame" x="173" y="439" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select up to three focal points where you would like to improve:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mid-Q1-n9O">
+                                <rect key="frame" x="20" y="140" width="374" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="ugV-g2-6id"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                <color key="textColor" red="0.1075952277" green="0.14367040989999999" blue="0.3098225892" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="113" translatesAutoresizingMaskIntoConstraints="NO" id="yNN-9w-sV2">
+                                <rect key="frame" x="20" y="219" width="374" height="119"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5uJ-cT-Cpk">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="119"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qi-1U-rrL">
+                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="finance">
+                                                    <color key="titleColor" red="0.1026582643" green="0.14027062060000001" blue="0.32158654930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-IG-y6C">
+                                                <rect key="frame" x="0.0" y="41.5" width="130.5" height="36"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="career"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-lD-Rhf">
+                                                <rect key="frame" x="0.0" y="82.5" width="130.5" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="relationships"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-tj-Y57">
+                                        <rect key="frame" x="243.5" y="0.0" width="130.5" height="119"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZH-xB-T5W">
+                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="fitness">
+                                                    <color key="titleColor" red="0.1026582643" green="0.14027062060000001" blue="0.32158654930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bT-Ca-b7l">
+                                                <rect key="frame" x="0.0" y="41.5" width="130.5" height="36"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="education">
+                                                    <color key="titleColor" red="0.1026582643" green="0.14027062060000001" blue="0.32158654930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Dm-lR-6ue">
+                                                <rect key="frame" x="0.0" y="82.5" width="130.5" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="mental health"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4zD-8U-vrm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zkP-mS-nEN" firstAttribute="leading" secondItem="4zD-8U-vrm" secondAttribute="leading" constant="30" id="0AB-aR-kwG"/>
+                            <constraint firstItem="p0a-8a-PZu" firstAttribute="top" secondItem="zkP-mS-nEN" secondAttribute="bottom" constant="5" id="0oc-60-2MR"/>
+                            <constraint firstItem="4zD-8U-vrm" firstAttribute="trailing" secondItem="yNN-9w-sV2" secondAttribute="trailing" constant="20" id="8g2-PH-uPi"/>
+                            <constraint firstItem="4zD-8U-vrm" firstAttribute="trailing" secondItem="p0a-8a-PZu" secondAttribute="trailing" constant="30" id="9J2-De-fGE"/>
+                            <constraint firstItem="zkP-mS-nEN" firstAttribute="top" secondItem="yNN-9w-sV2" secondAttribute="bottom" constant="17" id="GLm-9Y-Xd4"/>
+                            <constraint firstItem="mid-Q1-n9O" firstAttribute="leading" secondItem="4zD-8U-vrm" secondAttribute="leading" constant="20" id="O8H-hy-h3x"/>
+                            <constraint firstItem="yNN-9w-sV2" firstAttribute="leading" secondItem="4zD-8U-vrm" secondAttribute="leading" constant="20" id="Wtw-Lf-7SW"/>
+                            <constraint firstItem="p0a-8a-PZu" firstAttribute="leading" secondItem="4zD-8U-vrm" secondAttribute="leading" constant="30" id="Xkv-RS-0W8"/>
+                            <constraint firstItem="4zD-8U-vrm" firstAttribute="trailing" secondItem="zkP-mS-nEN" secondAttribute="trailing" constant="30" id="ZoF-2B-Pov"/>
+                            <constraint firstItem="p0a-8a-PZu" firstAttribute="top" secondItem="zkP-mS-nEN" secondAttribute="bottom" constant="5" id="cLU-UZ-wpR"/>
+                            <constraint firstItem="4zD-8U-vrm" firstAttribute="trailing" secondItem="mid-Q1-n9O" secondAttribute="trailing" constant="20" id="gnh-pN-F70"/>
+                            <constraint firstItem="yNN-9w-sV2" firstAttribute="top" secondItem="mid-Q1-n9O" secondAttribute="bottom" constant="8" id="sbO-O6-kc6"/>
+                            <constraint firstItem="mid-Q1-n9O" firstAttribute="top" secondItem="4zD-8U-vrm" secondAttribute="top" id="xQL-q6-WVh"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="p0a-8a-PZu" secondAttribute="bottom" constant="430" id="xXP-fT-GGu"/>
+                            <constraint firstItem="zkP-mS-nEN" firstAttribute="top" secondItem="yNN-9w-sV2" secondAttribute="bottom" constant="17" id="xdN-Zq-3g9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Set Up" id="ysx-HN-6hb"/>
+                    <connections>
+                        <outlet property="slider" destination="8u0-9M-Gg8" id="vHu-Wv-pJ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd8-vq-mRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,7 +555,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-By-yiU">
-                                <rect key="frame" x="118" y="82" width="178" height="43.5"/>
+                                <rect key="frame" x="20" y="83" width="178" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

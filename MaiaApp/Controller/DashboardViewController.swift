@@ -15,6 +15,10 @@ class DashboardViewController: UIViewController {
     var averagesArray = [Double]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    //notification center
+    let center = UNUserNotificationCenter.current()
+
+    
     @IBOutlet weak var graphView: LineChartView!
     
    
@@ -24,6 +28,34 @@ class DashboardViewController: UIViewController {
         loadData()
         getAverages()
         updateChart()
+        
+        //setting up reminders
+        let content = UNMutableNotificationContent()
+        content.title = "Hey, it's Maia!"
+        content.body = "You haven't checked in a while, so we wanted to check on you!"
+        
+        //this is in seconds
+        //a day has 86,400 seconds
+        //a week has 604,800 seconds
+        //currently a notification after 600 seconds of exiting the app, only one until they re-open
+        //this means that 10 minutes after opening the dashboard, it'll send a reminder (for testing purposes of course)!
+       let date = Date().addingTimeInterval(60)
+        
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        //usually set to false for repeats
+       let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        //idk what this is?
+        let uuidString = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //something went wrong
+        }
+        //end of code for reminders
+        
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds

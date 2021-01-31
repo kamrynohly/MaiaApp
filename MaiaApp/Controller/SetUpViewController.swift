@@ -9,6 +9,8 @@ import UIKit
 
 class SetUpViewController: UIViewController {
 
+    @IBOutlet weak var slider: UISwitch!
+    
     @IBAction func goToDiagnostic(_ sender: Any) {
         if let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiagnosticNavigationController") as? UINavigationController
         {
@@ -26,6 +28,19 @@ class SetUpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        
+        //asks for permission to send reminders
+        if slider.isOn {
+            let center = UNUserNotificationCenter.current()
+
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                //hopefully they grant permission
+            }
+        }
+    }
+    
     
 
     /*
