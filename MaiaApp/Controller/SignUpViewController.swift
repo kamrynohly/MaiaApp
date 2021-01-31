@@ -60,6 +60,8 @@ class SignUpViewController: UIViewController {
                             
                             //for creation of goals data location
                             var goalsRef = Database.database().reference().child("users").child(userID!).child("goals")
+                            var dataRef = Database.database().reference().child("users").child(userID!).child("dataUpdates")
+
                            
                             
                             self.performSegue(withIdentifier: "successSignUp", sender: self)

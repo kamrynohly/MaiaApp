@@ -7,14 +7,16 @@
 
 import UIKit
 import Charts
-import CoreData
+//import CoreData
+import Firebase
 
 class SelfImprovementViewController: UIViewController {
     
-    var arrayOfUpdates = [Update]()
+    //var arrayOfUpdates = [Update]()
+    var arrayOfUpdates = [DataUpdate]()
     var averagesArray = [Double]()
     var valuesDict = [String: Double]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var graphView: LineChartView!
     @IBOutlet weak var status: UILabel!
@@ -22,19 +24,12 @@ class SelfImprovementViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        getAverages()
-        updateChart()
+        retrieveDataPoints()
+//        loadData()
+//        getAverages()
+//        updateChart()
         
-        if averagesArray.count <= 1 {
-            status.text = "Here's to new beginnings :)"
-        } else {
-            if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
-                status.text = "We've been doing better this week!!"
-            } else {
-                status.text = "We have some room for improvement this week, and that's okay!"
-            }
-        }
+       
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -51,7 +46,7 @@ class SelfImprovementViewController: UIViewController {
             for i in 0..<arrayOfUpdates.count {
                 let item = arrayOfUpdates[i]
                 numOfQuestions = Double(item.numberOfQuestions)
-                let arrayOfResponses : [Double] = item.arrayOfResponses! as! [Double]
+                let arrayOfResponses : [Double] = item.arrayOfResponses as! [Double]
                 for value in 5...7 {
                     total += arrayOfResponses[value]
                 }
@@ -62,16 +57,16 @@ class SelfImprovementViewController: UIViewController {
             }
             print(averagesArray)
         }
-        
-        func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
-            do {
-                arrayOfUpdates = try context.fetch(request)
-            }
-            catch {
-                print("Error fetching data from context, \(error)")
-            }
-            
-        }
+//
+//        func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
+//            do {
+//                arrayOfUpdates = try context.fetch(request)
+//            }
+//            catch {
+//                print("Error fetching data from context, \(error)")
+//            }
+//
+//        }
         
         func updateChart() {
             var lineChartEntry = [ChartDataEntry]()
@@ -108,5 +103,45 @@ class SelfImprovementViewController: UIViewController {
         }
 
 
+    func retrieveDataPoints() {
+        
+        let userID = Auth.auth().currentUser?.uid
+        var dataRef = Database.database().reference().child("users").child(userID!).child("dataUpdates")
+
+        dataRef.observe(.childAdded) { (snapshot) in
+
+            let snapshotValue = snapshot.value as! NSArray
+            
+            if snapshotValue[0] != nil {
+                let dataUpdate = DataUpdate()
+                dataUpdate.numberOfQuestions = 8
+              //  let valueOne = snapshotValue[0]
+
+                for i in 0...7 {
+                    dataUpdate.arrayOfResponses.append(snapshotValue[i] as! Double)
+                }
+                
+                self.arrayOfUpdates.append(dataUpdate)
+                self.getAverages()
+                self.updateChart()
+                self.additionalSetUp()
+            }
+            else {
+                print("Something isn't working")
+            }
+        }
+    }
+    
+    func additionalSetUp() {
+        if averagesArray.count <= 1 {
+            status.text = "Here's to new beginnings :)"
+        } else {
+            if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
+                status.text = "We've been doing better this week!!"
+            } else {
+                status.text = "We have some room for improvement this week, and that's okay!"
+            }
+        }
+    }
 
 }

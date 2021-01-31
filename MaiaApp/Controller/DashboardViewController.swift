@@ -8,12 +8,15 @@
 import UIKit
 import Charts
 import CoreData
+import Firebase
 
 class DashboardViewController: UIViewController {
 
-    var arrayOfUpdates = [Update]()
+    //var arrayOfUpdates = [Update]()
+    var arrayOfUpdates = [DataUpdate]()
+
     var averagesArray = [Double]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+   // let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //notification center
     let center = UNUserNotificationCenter.current()
@@ -25,9 +28,11 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadData()
-        getAverages()
-        updateChart()
+        retrieveDataPoints()
+
+//        loadData()
+       // getAverages()
+       // updateChart()
         
         //setting up reminders
         let content = UNMutableNotificationContent()
@@ -64,33 +69,92 @@ class DashboardViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func getAverages() {
-        var total = 0.0
-        var numOfQuestions = 0.0
-        for i in 0..<arrayOfUpdates.count {
-            let item = arrayOfUpdates[i]
-            numOfQuestions = Double(item.numberOfQuestions)
-            let arrayOfResponses : [Double] = item.arrayOfResponses! as! [Double]
-            for value in arrayOfResponses{
-                total += value
-            }
+    
+    func retrieveDataPoints() {
+        
+        let userID = Auth.auth().currentUser?.uid
+        var dataRef = Database.database().reference().child("users").child(userID!).child("dataUpdates")
+
+        dataRef.observe(.childAdded) { (snapshot) in
+
+            let snapshotValue = snapshot.value as! NSArray
             
-            averagesArray.append(total/numOfQuestions)
-            total = 0.0
-            numOfQuestions = 0.0
+            if snapshotValue[0] != nil {
+                let dataUpdate = DataUpdate()
+                dataUpdate.numberOfQuestions = 8
+              //  let valueOne = snapshotValue[0]
+
+                for i in 0...7 {
+                    dataUpdate.arrayOfResponses.append(snapshotValue[i] as! Double)
+                }
+                
+//                dataUpdate.arrayOfResponses.append(snapshotValue[0] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[1] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[2] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[3] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[4] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[5] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[6] as! Double)
+//                dataUpdate.arrayOfResponses.append(snapshotValue[7] as! Double)
+                
+                print(dataUpdate.arrayOfResponses)
+                self.arrayOfUpdates.append(dataUpdate)
+                self.getAverages()
+                self.updateChart()
+            }
+            else {
+                print("Something isn't working")
+            }
         }
-        print(averagesArray)
     }
     
-    func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
-        do {
-            arrayOfUpdates = try context.fetch(request)
+    
+//    func getAverages() {
+//        var total = 0.0
+//        var numOfQuestions = 0.0
+//        for i in 0..<arrayOfUpdates.count {
+//            let item = arrayOfUpdates[i]
+//            numOfQuestions = Double(item.numberOfQuestions)
+//            let arrayOfResponses : [Double] = item.arrayOfResponses! as! [Double]
+//            for value in arrayOfResponses{
+//                total += value
+//            }
+//
+//            averagesArray.append(total/numOfQuestions)
+//            total = 0.0
+//            numOfQuestions = 0.0
+//        }
+//        print(averagesArray)
+//    }
+    
+        func getAverages() {
+            var total = 0.0
+            var numOfQuestions = 8.0
+            for i in 0..<arrayOfUpdates.count {
+                let item = arrayOfUpdates[i]
+                numOfQuestions = Double(item.numberOfQuestions)
+                let arrayOfResponses : [Double] = item.arrayOfResponses as! [Double]
+                for value in arrayOfResponses{
+                    total += value
+                }
+    
+                averagesArray.append(total/numOfQuestions)
+                total = 0.0
+                numOfQuestions = 0.0
+            }
+            print(averagesArray)
         }
-        catch {
-            print("Error fetching data from context, \(error)")
-        }
-        
-    }
+    
+//
+//    func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
+//        do {
+//            arrayOfUpdates = try context.fetch(request)
+//        }
+//        catch {
+//            print("Error fetching data from context, \(error)")
+//        }
+//
+//    }
     
     func updateChart() {
         var lineChartEntry = [ChartDataEntry]()

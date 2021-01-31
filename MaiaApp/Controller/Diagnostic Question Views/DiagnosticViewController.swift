@@ -61,6 +61,44 @@ class DiagnosticViewController: UIViewController, MSCircularSliderDelegate {
         
         saveData()
         
+        
+        let data = DataUpdate()
+        data.arrayOfResponses = valueArray
+        data.numberOfQuestions = 8
+        
+        //Firebase implementation
+        let userID = Auth.auth().currentUser?.uid
+        //finds the user's name, used to confirm existence of user, no null value
+        let infoReference = Database.database().reference().child("users").child(userID!).child("personalInfo")
+                    
+        var dataRef = Database.database().reference().child("users").child(userID!).child("dataUpdates")
+
+        let date = Date()
+        let dateFormatter = DateFormatter()
+
+        // Set Date Format
+        dateFormatter.dateFormat = "YY, MMM d, HH:mm:ss"
+
+        // Convert Date to String
+        let todaysDate = dateFormatter.string(from: date)
+        
+        
+        infoReference.observe(.value) { (snapshot) in
+            //snapshot should be formatted
+            let snapshot = snapshot.value as? [String : String] ?? [:]
+
+            dataRef.child(todaysDate).setValue(self.valueArray) {
+                (error, reference) in
+                if error != nil {
+                    print(error!)
+                }
+                else {
+                    print("Data update saved successfully.")
+                }
+            }
+        }
+        
+    
         //go back to dashboard
         if let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
         {
