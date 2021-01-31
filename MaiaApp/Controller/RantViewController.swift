@@ -24,6 +24,12 @@ class RantViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        // main page gradient
+        gradientLayer.colors = [UIColor(red: 1.00, green: 0.75, blue: 0.41, alpha: 1.00).cgColor, UIColor(red: 0.98, green: 0.70, blue: 0.87, alpha: 1.00).cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
 
         // Do any additional setup after loading the view.
     }

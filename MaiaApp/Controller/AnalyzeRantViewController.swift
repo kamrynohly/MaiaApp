@@ -17,6 +17,11 @@ class AnalyzeRantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        // main page gradient
+        gradientLayer.colors = [UIColor(red: 1.00, green: 0.75, blue: 0.41, alpha: 1.00).cgColor, UIColor(red: 0.98, green: 0.70, blue: 0.87, alpha: 1.00).cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         print(rantText)
         let authenticator = WatsonIAMAuthenticator(apiKey: "VR06UAdRPAQba1pLDDmN9BXnhQY_hhKklhElkzPTDOR4")
         let toneAnalyzer = ToneAnalyzer(version: "2018-12-31", authenticator: authenticator)
