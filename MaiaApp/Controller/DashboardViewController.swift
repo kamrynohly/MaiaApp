@@ -7,14 +7,14 @@
 
 import UIKit
 import Charts
-import CoreData
+//import CoreData
 import Firebase
 
 class DashboardViewController: UIViewController {
 
     //var arrayOfUpdates = [Update]()
     var arrayOfUpdates = [DataUpdate]()
-
+    var loaded = false
     var averagesArray = [Double]()
    // let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -30,10 +30,6 @@ class DashboardViewController: UIViewController {
         
         retrieveDataPoints()
 
-//        loadData()
-       // getAverages()
-       // updateChart()
-        
         //setting up reminders
         let content = UNMutableNotificationContent()
         content.title = "Hey, it's Maia!"
@@ -69,12 +65,17 @@ class DashboardViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getAverages()
+        updateChart()
+        loaded = true
+    }
     
     func retrieveDataPoints() {
         
         let userID = Auth.auth().currentUser?.uid
         var dataRef = Database.database().reference().child("users").child(userID!).child("dataUpdates")
-
+        
         dataRef.observe(.childAdded) { (snapshot) in
 
             let snapshotValue = snapshot.value as! NSArray
@@ -82,25 +83,15 @@ class DashboardViewController: UIViewController {
             if snapshotValue[0] != nil {
                 let dataUpdate = DataUpdate()
                 dataUpdate.numberOfQuestions = 8
-              //  let valueOne = snapshotValue[0]
 
                 for i in 0...7 {
                     dataUpdate.arrayOfResponses.append(snapshotValue[i] as! Double)
                 }
                 
-//                dataUpdate.arrayOfResponses.append(snapshotValue[0] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[1] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[2] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[3] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[4] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[5] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[6] as! Double)
-//                dataUpdate.arrayOfResponses.append(snapshotValue[7] as! Double)
-                
-                print(dataUpdate.arrayOfResponses)
+//                print(dataUpdate.arrayOfResponses)
                 self.arrayOfUpdates.append(dataUpdate)
-                self.getAverages()
-                self.updateChart()
+               
+
             }
             else {
                 print("Something isn't working")
@@ -142,52 +133,46 @@ class DashboardViewController: UIViewController {
                 total = 0.0
                 numOfQuestions = 0.0
             }
-            print(averagesArray)
         }
     
-//
-//    func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
-//        do {
-//            arrayOfUpdates = try context.fetch(request)
-//        }
-//        catch {
-//            print("Error fetching data from context, \(error)")
-//        }
-//
-//    }
     
     func updateChart() {
-        var lineChartEntry = [ChartDataEntry]()
-        
-        for i in 0..<averagesArray.count {
-            let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
-            lineChartEntry.append(info)
+        if loaded {
+            //do nothing
         }
-        
-        let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
-        userLine.colors = [NSUIColor.purple]
-        userLine.mode = .cubicBezier
-        userLine.cubicIntensity = 0.2
-        userLine.drawCirclesEnabled = false
+        else {
+            var lineChartEntry = [ChartDataEntry]()
+            
+                for i in 0..<averagesArray.count {
+                    let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
+                    lineChartEntry.append(info)
+                }
+                
+                let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
+                userLine.colors = [NSUIColor.purple]
+                userLine.mode = .cubicBezier
+                userLine.cubicIntensity = 0.2
+                userLine.drawCirclesEnabled = false
 
 
-        let dataStuff = LineChartData()
-        dataStuff.addDataSet(userLine)
+                let dataStuff = LineChartData()
+                dataStuff.addDataSet(userLine)
 
-        graphView.drawGridBackgroundEnabled = false
-       
-        graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
+                graphView.drawGridBackgroundEnabled = false
+               
+                graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
 
-        graphView.chartDescription?.text = "this works!"
-        
-        graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
-        graphView.xAxis.drawGridLinesEnabled = false
-        graphView.leftAxis.drawGridLinesEnabled = false
-        graphView.rightAxis.drawGridLinesEnabled = false
-        graphView.xAxis.labelPosition = .bottom
-        graphView.rightAxis.drawLabelsEnabled = false
+                
+                graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
+                graphView.xAxis.drawGridLinesEnabled = false
+                graphView.leftAxis.drawGridLinesEnabled = false
+                graphView.rightAxis.drawGridLinesEnabled = false
+                graphView.xAxis.labelPosition = .bottom
+                graphView.rightAxis.drawLabelsEnabled = false
 
-        graphView.data = dataStuff
+                graphView.data = dataStuff
+        }
+     
     }
 
     

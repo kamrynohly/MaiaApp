@@ -13,6 +13,7 @@ import Firebase
 class SelfImprovementViewController: UIViewController {
     
     //var arrayOfUpdates = [Update]()
+    var loaded = false
     var arrayOfUpdates = [DataUpdate]()
     var averagesArray = [Double]()
     var valuesDict = [String: Double]()
@@ -25,11 +26,6 @@ class SelfImprovementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveDataPoints()
-//        loadData()
-//        getAverages()
-//        updateChart()
-        
-       
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -37,7 +33,13 @@ class SelfImprovementViewController: UIViewController {
         gradientLayer.colors = [UIColor(red: 0.80, green: 0.93, blue: 0.96, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor ]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getAverages()
+        updateChart()
+        additionalSetUp()
+        loaded = true
     }
     
     func getAverages() {
@@ -57,49 +59,44 @@ class SelfImprovementViewController: UIViewController {
             }
             print(averagesArray)
         }
-//
-//        func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
-//            do {
-//                arrayOfUpdates = try context.fetch(request)
-//            }
-//            catch {
-//                print("Error fetching data from context, \(error)")
-//            }
-//
-//        }
+
         
         func updateChart() {
-            var lineChartEntry = [ChartDataEntry]()
-            
-            for i in 0..<averagesArray.count {
-                let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
-                lineChartEntry.append(info)
+            if loaded {
+                //do nothing
             }
-            
-            let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
-            userLine.colors = [NSUIColor.purple]
-            userLine.mode = .cubicBezier
-            userLine.cubicIntensity = 0.2
-            userLine.drawCirclesEnabled = false
+            else {
+                var lineChartEntry = [ChartDataEntry]()
+                
+                for i in 0..<averagesArray.count {
+                    let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
+                    lineChartEntry.append(info)
+                }
+                
+                let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
+                userLine.colors = [NSUIColor.purple]
+                userLine.mode = .cubicBezier
+                userLine.cubicIntensity = 0.2
+                userLine.drawCirclesEnabled = false
 
 
-            let dataStuff = LineChartData()
-            dataStuff.addDataSet(userLine)
+                let dataStuff = LineChartData()
+                dataStuff.addDataSet(userLine)
 
-            graphView.drawGridBackgroundEnabled = false
-           
-            graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
+                graphView.drawGridBackgroundEnabled = false
+               
+                graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
 
-            graphView.chartDescription?.text = "this works!"
-            
-            graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
-            graphView.xAxis.drawGridLinesEnabled = false
-            graphView.leftAxis.drawGridLinesEnabled = false
-            graphView.rightAxis.drawGridLinesEnabled = false
-            graphView.xAxis.labelPosition = .bottom
-            graphView.rightAxis.drawLabelsEnabled = false
+                
+                graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
+                graphView.xAxis.drawGridLinesEnabled = false
+                graphView.leftAxis.drawGridLinesEnabled = false
+                graphView.rightAxis.drawGridLinesEnabled = false
+                graphView.xAxis.labelPosition = .bottom
+                graphView.rightAxis.drawLabelsEnabled = false
 
-            graphView.data = dataStuff
+                graphView.data = dataStuff
+            }
         }
 
 
@@ -122,9 +119,7 @@ class SelfImprovementViewController: UIViewController {
                 }
                 
                 self.arrayOfUpdates.append(dataUpdate)
-                self.getAverages()
-                self.updateChart()
-                self.additionalSetUp()
+               
             }
             else {
                 print("Something isn't working")

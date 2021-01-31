@@ -105,6 +105,8 @@ class NewCirclePostViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+
         let circlePicker = UIPickerView()
         circlePicker.tag = 0
         let typePicker = UIPickerView()

@@ -14,6 +14,7 @@ class CareDataBreakdownViewController: UIViewController {
     
     @IBOutlet weak var graphView: LineChartView!
    // var arrayOfUpdates = [Update]()
+    var loaded = false
     var arrayOfUpdates = [DataUpdate]()
     var averagesArray = [Double]()
     var values0 = [Double]()
@@ -27,9 +28,6 @@ class CareDataBreakdownViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveDataPoints()
-//        //loadData()
-//        getAverages()
-//        updateChart()
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -37,6 +35,12 @@ class CareDataBreakdownViewController: UIViewController {
         gradientLayer.colors = [UIColor(red: 0.80, green: 0.93, blue: 0.96, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor ]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getAverages()
+        updateChart()
+        loaded = true
     }
     
     func getAverages() {
@@ -76,67 +80,62 @@ class CareDataBreakdownViewController: UIViewController {
         }
         print(averagesArray)
     }
-//
-//    func loadData(with request : NSFetchRequest<Update> = Update.fetchRequest()) {
-//        do {
-//            arrayOfUpdates = try context.fetch(request)
-//        }
-//        catch {
-//            print("Error fetching data from context, \(error)")
-//        }
-//
-//    }
+
     
     func updateChart() {
-        let dataStuff = LineChartData()
-        var lineChartEntry = [ChartDataEntry]()
-        var values = [values0, values1, values2, values3, values4]
-        var colors = [NSUIColor.purple, NSUIColor.blue, NSUIColor.green, NSUIColor.yellow, NSUIColor.orange]
-        
-        for value in values {
-            var currentIndex = values.firstIndex(of: value)
-            lineChartEntry.removeAll()
-            for i in 0..<value.count {
-                let info = ChartDataEntry(x: Double(i), y: value[i])
-                lineChartEntry.append(info)
-            }
-            let userLine = LineChartDataSet(entries: lineChartEntry, label: typesArr[currentIndex!])
-            userLine.colors = [colors[currentIndex!]]
-            userLine.mode = .cubicBezier
-            userLine.cubicIntensity = 0.2
-            userLine.drawCirclesEnabled = false
-            
-            dataStuff.addDataSet(userLine)
+        if loaded {
+            //do nothing
         }
-//        for i in 0..<averagesArray.count {
-//            let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
-//            lineChartEntry.append(info)
-//        }
-//
-//        let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
-//        userLine.colors = [NSUIColor.purple]
-//        userLine.mode = .cubicBezier
-//        userLine.cubicIntensity = 0.2
-//        userLine.drawCirclesEnabled = false
-//
-//
-//
-//        dataStuff.addDataSet(userLine)
-        
-        graphView.drawGridBackgroundEnabled = false
-        
-        graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
-        
-        graphView.chartDescription?.text = "this works!"
-        
-        graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
-        graphView.xAxis.drawGridLinesEnabled = false
-        graphView.leftAxis.drawGridLinesEnabled = false
-        graphView.rightAxis.drawGridLinesEnabled = false
-        graphView.xAxis.labelPosition = .bottom
-        graphView.rightAxis.drawLabelsEnabled = false
-        
-        graphView.data = dataStuff
+        else {
+            let dataStuff = LineChartData()
+            var lineChartEntry = [ChartDataEntry]()
+            var values = [values0, values1, values2, values3, values4]
+            var colors = [NSUIColor.purple, NSUIColor.blue, NSUIColor.green, NSUIColor.yellow, NSUIColor.orange]
+            
+            for value in values {
+                var currentIndex = values.firstIndex(of: value)
+                lineChartEntry.removeAll()
+                for i in 0..<value.count {
+                    let info = ChartDataEntry(x: Double(i), y: value[i])
+                    lineChartEntry.append(info)
+                }
+                let userLine = LineChartDataSet(entries: lineChartEntry, label: typesArr[currentIndex!])
+                userLine.colors = [colors[currentIndex!]]
+                userLine.mode = .cubicBezier
+                userLine.cubicIntensity = 0.2
+                userLine.drawCirclesEnabled = false
+                
+                dataStuff.addDataSet(userLine)
+            }
+    //        for i in 0..<averagesArray.count {
+    //            let info = ChartDataEntry(x: Double(i), y: averagesArray[i])
+    //            lineChartEntry.append(info)
+    //        }
+    //
+    //        let userLine = LineChartDataSet(entries: lineChartEntry, label: "Averages")
+    //        userLine.colors = [NSUIColor.purple]
+    //        userLine.mode = .cubicBezier
+    //        userLine.cubicIntensity = 0.2
+    //        userLine.drawCirclesEnabled = false
+    //
+    //
+    //
+    //        dataStuff.addDataSet(userLine)
+            
+            graphView.drawGridBackgroundEnabled = false
+            
+            graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
+            
+            
+            graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
+            graphView.xAxis.drawGridLinesEnabled = false
+            graphView.leftAxis.drawGridLinesEnabled = false
+            graphView.rightAxis.drawGridLinesEnabled = false
+            graphView.xAxis.labelPosition = .bottom
+            graphView.rightAxis.drawLabelsEnabled = false
+            
+            graphView.data = dataStuff
+        }
     }
     
     func retrieveDataPoints() {
@@ -158,8 +157,6 @@ class CareDataBreakdownViewController: UIViewController {
                 }
                 
                 self.arrayOfUpdates.append(dataUpdate)
-                self.getAverages()
-                self.updateChart()
             }
             else {
                 print("Something isn't working")
@@ -167,14 +164,6 @@ class CareDataBreakdownViewController: UIViewController {
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }

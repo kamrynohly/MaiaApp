@@ -24,6 +24,8 @@ class RantViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         // main page gradient

@@ -17,6 +17,7 @@ class AddGoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
 
     }
     
