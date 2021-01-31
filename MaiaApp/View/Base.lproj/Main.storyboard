@@ -798,6 +798,13 @@ connections</string>
                                     <action selector="logOut:" destination="kcQ-ch-IBP" eventType="touchUpInside" id="eny-SL-C8x"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JC-Qv-Kf1">
+                                <rect key="frame" x="28" y="67" width="126" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dBE-7U-UUU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -806,7 +813,7 @@ connections</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10L-bl-Nhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4251" y="3496"/>
+            <point key="canvasLocation" x="4250.7246376811599" y="3495.5357142857142"/>
         </scene>
         <!--RANT-->
         <scene sceneID="nEr-Z8-Ubj">
