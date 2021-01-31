@@ -26,10 +26,14 @@ class SelfImprovementViewController: UIViewController {
         getAverages()
         updateChart()
         
-        if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
-            status.text = "We've been doing better this week!!"
+        if averagesArray.count <= 1 {
+            status.text = "Here's to new beginnings :)"
         } else {
-            status.text = "We have some room for improvement this week, and that's okay!"
+            if averagesArray[averagesArray.count-1] > averagesArray[averagesArray.count-2] {
+                status.text = "We've been doing better this week!!"
+            } else {
+                status.text = "We have some room for improvement this week, and that's okay!"
+            }
         }
 
         let gradientLayer = CAGradientLayer()
