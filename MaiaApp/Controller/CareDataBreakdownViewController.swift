@@ -126,6 +126,8 @@ class CareDataBreakdownViewController: UIViewController {
             
             graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
             
+            graphView.chartDescription?.text = "your stats"
+
             
             graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
             graphView.xAxis.drawGridLinesEnabled = false

@@ -91,6 +91,7 @@ class SelfCareViewController: UIViewController {
                 graphView.drawGridBackgroundEnabled = false
                
                 graphView.noDataText = "Oh no, it seems your data is not loading. Something may have gone wrong. Check back again later!"
+                graphView.chartDescription?.text = "your stats"
 
                 
                 graphView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInSine)
